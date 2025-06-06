@@ -7,7 +7,7 @@ export default function Home() {
     <>
     <Navbar/>
       <Carousel/>
-      <SkillSphere/>
+      <SkillSphere />
     </>
   )
 }
