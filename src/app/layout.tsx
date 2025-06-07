@@ -24,6 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/dheereshagrwal/coloured-icons@master/src/app/ci.min.css"
+/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

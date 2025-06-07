@@ -7,7 +7,7 @@ import { Billboard, Text, TrackballControls } from '@react-three/drei'
 import { div } from 'framer-motion/client'
 
 const skills = [
-  'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js',
+  'javaScript', 'typeScript', 'react', 'next.js', 'Node.js',
   'Tailwind', 'Framer Motion', 'Three.js', 'MongoDB', 'Express',
   'HTML', 'CSS', 'Git', 'GraphQL', 'Docker', 'Figma'
 ]
@@ -31,7 +31,10 @@ function Word({ children, position }: { children: string; position: THREE.Vector
   const out = () => setHovered(false)
 
   useEffect(() => {
-    if (hovered) document.body.style.cursor = 'pointer'
+    if (hovered) {
+      document.body.style.cursor = 'pointer'
+    }
+
     return () => {
       document.body.style.cursor = 'auto'
     }
@@ -55,15 +58,16 @@ function Word({ children, position }: { children: string; position: THREE.Vector
         material-depthTest={false}
         material-transparent={true}
         renderOrder={999}
+        
       >
-        {children}
+       <i className={`ci ci-${children} ci-2x`}></i>
       </Text>
     </Billboard>
   )
 }
 
 
-function Cloud({ radius = 30 }) {
+function Cloud({ radius = 40 }) {
   const groupRef = useRef<THREE.Group>(null)
 
   const positions = useMemo(() => {
@@ -93,12 +97,12 @@ function Cloud({ radius = 30 }) {
 
 export default function comp() {
   return (
-    <div className='h-screen w-screen overflow-hidden'>
-    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 80], fov: 90 }} >
+    <div className=' '>
+    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 80], fov: 90 }} style={{ height: '600px', width: '100%'}}>
       <fog attach="fog" args={['#202025', 0, 80]} />
       <ambientLight intensity={1.2} />
       <Suspense fallback={null}>
-        <Cloud radius={30} />
+        <Cloud radius={40}  />
       </Suspense>
       <TrackballControls noZoom />
     </Canvas>
