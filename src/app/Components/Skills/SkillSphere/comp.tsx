@@ -4,12 +4,11 @@ import * as THREE from 'three'
 import { useRef, useState, useMemo, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Billboard, Text, TrackballControls } from '@react-three/drei'
-import { div } from 'framer-motion/client'
+import { Html } from '@react-three/drei'
+
 
 const skills = [
-  'javaScript', 'typeScript', 'react', 'next.js', 'Node.js',
-  'Tailwind', 'Framer Motion', 'Three.js', 'MongoDB', 'Express',
-  'HTML', 'CSS', 'Git', 'GraphQL', 'Docker', 'Figma'
+  'html', 'css', 'tailwindcss','cpp', 'react', 'node', 'javascript', 'typescript', 'python', 'next', 'prisma', 'mongo', 'postgres', 'express', 'r','vite', 'tensorflow', 'pytorch', 'opencv' 
 ]
 
 function Word({ children, position }: { children: string; position: THREE.Vector3 }) {
@@ -60,7 +59,9 @@ function Word({ children, position }: { children: string; position: THREE.Vector
         renderOrder={999}
         
       >
-       <i className={`ci ci-${children} ci-2x`}></i>
+        <Html center>
+    <i className={`ci ci-${children} ci-2x`} />
+  </Html>
       </Text>
     </Billboard>
   )
