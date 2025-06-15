@@ -4,6 +4,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { MeshStandardMaterial, Mesh } from 'three'
+import { Leva, useControls } from 'leva'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -39,6 +40,7 @@ type Props = React.ComponentProps<'group'>
 
 export default function comp(props: Props) {
   const { nodes, materials } = useGLTF('/assets/Models/sci-fi_computer_room.glb') as unknown as GLTFResult
+
 
   return (
     <group {...props} dispose={null}>
