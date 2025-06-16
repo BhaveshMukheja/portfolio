@@ -1,0 +1,107 @@
+{
+  "webdev": [
+    {
+      "title": "Portfolio",
+      "descrip": "That is my friend you are looking at",
+      "githubLink": "#",
+      "demoLink": "#",
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Prisma",
+        "Material UI"
+      ],
+      "image": "assets/projects/portfolio.jpg"
+    },
+
+    {
+      "title": "Stock Monitor Platform ",
+      "descrip": "Web application for Intra day tracking and managing stock portfolios",
+      "githubLink": "https://github.com/BhaveshMukheja/stock-monitor",
+      "demoLink": "https://bhaveshmukheja.github.io/stock-monitor-dashboard/",
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Prisma",
+        "Material UI"
+      ],
+      "image": "assets/projects/stock_monitor.jpg"
+    },
+    {
+      "title": "Whisper",
+      "descrip": "Real time chat application",
+      "githubLink": "https://github.com/BhaveshMukheja/real-time-chat-app-whisper",
+      "demoLink": "https://github.com/BhaveshMukheja/real-time-chat-app-whisper",
+      "stack": [
+        "NextJS",
+        "Express",
+        "MongoDB",
+        "TypeScript",
+        "Prisma",
+        "Tailwind CSS",
+        "GraphQL",
+        "WebSocket",
+        "Framer-motion"
+      ],
+      "image": "assets/projects/whisper.jpg"
+    },
+    {
+      "title": "your_prop",
+      "descrip": "A swipeable property finder application",
+      "githubLink": "#",
+      "demoLink": "#",
+      "stack": ["React", "Framer-motion", "TypeScript", "Tailwind CSS"],
+      "image": "assets/projects/your_prop.jpg"
+    },
+    {
+      "title": "Streamverse",
+      "descrip": "A video streaming application",
+      "githubLink": "https://github.com/BhaveshMukheja/Streamverse",
+      "demoLink": "https://bhaveshmukheja.github.io/Streamverse/",
+      "stack": ["React", "Framer-motion", "JavaScript", "Tailwind CSS"],
+      "image": "assets/projects/streamverse.jpg"
+    }
+    
+  ],
+
+  "MLnResearch": [
+{
+      "title": "Image Caption Generator",
+      "descrip": "NLP Based Image Caption Generator",
+      "githubLink": "https://github.com/BhaveshMukheja/image-caption-generator",
+      "demoLink": "https://github.com/BhaveshMukheja/image-caption-generator",
+      "stack": ["Python", "TensorFlow", "NLP", "LSTM", "VGG16"],
+      "image": "assets/projects/image_generator.jpg"
+    },
+    {
+      "title": "Term Paper on Mechanical Neural Networks",
+      "descrip": "Indian Institute of Technology Kharagpur, Prof. Pintu Patra",
+      "githubLink": "",
+      "demoLink": "https://drive.google.com/file/d/1ZVoZzORLrV7Z2qvXLZAaMzughMHnZOdk/view?usp=sharing",
+      "stack":"",
+      "image": "assets/projects/mnn.jpg"
+    },
+    {
+      "title": "Term Paper on Experimental Techniques in Neutrino Detection",
+      "descrip": "Indian Institute of Technology Kharagpur, Prof. Saikat Das",
+      "githubLink": "",
+      "demoLink": "https://drive.google.com/file/d/1oH90mkmpxcE6LjiihCdWkfqYLD4uyoIy/view?usp=sharing",
+      "stack": "",
+      "image": "assets/projects/neutrino.jpg"
+    },
+    {
+      "title": "Term Paper on Identical Particles in Quantum Mechanics",
+      "descrip": " Indian Institute of Technology Kharagpur, Prof. Tirtha Sankar Ray",
+      "githubLink": "",
+      "demoLink": "Ihttps://drive.google.com/file/d/1pFy-swP0nn6Tuv3dktxBO9RxOvN3mtrQ/view?usp=sharing",
+      "stack": "",
+      "image": "assets/projects/quantum.jpg"
+    }
+  ]
+}
