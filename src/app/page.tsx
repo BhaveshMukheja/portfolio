@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar/comp'
 import Skill from './Components/Skills/comp'
 import Timeline from './Components/Timeline/comp'
 import Projects from './Components/Projects/comp'
+import Competions from './Components/Competitions/comp'
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Skill />
       <Timeline/>
       <Projects/>
+      <Competions/>
       
     </>
   )
