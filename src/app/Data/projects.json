@@ -84,7 +84,7 @@
       "descrip": "Indian Institute of Technology Kharagpur, Prof. Pintu Patra",
       "githubLink": "",
       "demoLink": "https://drive.google.com/file/d/1ZVoZzORLrV7Z2qvXLZAaMzughMHnZOdk/view?usp=sharing",
-      "stack":"",
+      "stack":[],
       "image": "assets/projects/mnn.jpg"
     },
     {
@@ -92,7 +92,7 @@
       "descrip": "Indian Institute of Technology Kharagpur, Prof. Saikat Das",
       "githubLink": "",
       "demoLink": "https://drive.google.com/file/d/1oH90mkmpxcE6LjiihCdWkfqYLD4uyoIy/view?usp=sharing",
-      "stack": "",
+      "stack": [],
       "image": "assets/projects/neutrino.jpg"
     },
     {
@@ -100,7 +100,7 @@
       "descrip": " Indian Institute of Technology Kharagpur, Prof. Tirtha Sankar Ray",
       "githubLink": "",
       "demoLink": "Ihttps://drive.google.com/file/d/1pFy-swP0nn6Tuv3dktxBO9RxOvN3mtrQ/view?usp=sharing",
-      "stack": "",
+      "stack": [],
       "image": "assets/projects/quantum.jpg"
     }
   ]
