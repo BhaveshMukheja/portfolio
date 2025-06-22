@@ -65,7 +65,7 @@ const Terminal: React.FC = () => {
       const componentOutput = (
         <div className="p-3 rounded mt-2 text-white">
           Oh! You want to install the packages? Here you GO!
-          <Image src="https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif" className='object-cover w-full h-[300px]' width={'50'} height={'100'} alt="kya hua" />
+          <Image unoptimized src="https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif" className='object-cover w-full h-[300px]' width={'50'} height={'100'} alt="kya hua" />
         </div>
       );
       setHistory((prev) => [...prev, { type: 'component', content: componentOutput }]);
@@ -190,7 +190,7 @@ const Terminal: React.FC = () => {
   }, [history]);
 
   return (
-    <div className="bg-black text-green-400 p-4 w-full max-w-2xl font-mono rounded shadow-lg mx-auto">
+    <div className="bg-black p-4 w-full max-w-2xl font-mono rounded shadow-lg mx-auto">
       {/* MacOS-style top bar */}
       <div className="flex space-x-2 mb-2">
         <div className="w-3 h-3 rounded-full bg-red-500" />

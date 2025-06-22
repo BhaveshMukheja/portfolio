@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lexend+Tera:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-@import "tailwindcss";
+/* globals.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&family=Pacifico&display=swap');
+@import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Lexend Tera', 'Roboto Mono', 'Newsreader', sans-serif;
 }
 
-
-
-/* globals.css */
+@theme {
+ --font-insta: Pacifico, "sans-serif";
+}

@@ -1,6 +1,32 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Lexend_Tera, Roboto_Mono, Newsreader, Pacifico } from 'next/font/google';
 import "./globals.css";
+
+const lexend = Lexend_Tera({
+  subsets: ['latin'],
+  variable: '--font-lexend',
+  display: 'swap',
+});
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader',
+  display: 'swap',
+});
+
+const pacifico = Pacifico({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-pacifico',
+  display: 'swap',
+});
+
+const roboto = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  display: 'swap',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +59,10 @@ export default function RootLayout({
       </head>
    
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+    ${geistSans.variable}
+    ${geistMono.variable}
+    antialiased `}
       >
         {children}
       </body>
