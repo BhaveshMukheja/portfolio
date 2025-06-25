@@ -13,7 +13,7 @@ const tag = ({ mouseX }: Props) => {
     const width = useWindowWidth()
   
     // const translateX = useTransform(mouseX, [0, width], ['100%', '0%']) // Reveal left image as mouse moves left
-    const opacity = useTransform(mouseX, [width/2, width-width/6], [1, 0])
+    const opacity = useTransform(mouseX,  [width / 4, width / 2], [0, 1])
  
     
   

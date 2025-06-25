@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { useMotionValue } from 'framer-motion'
+import { useMotionValue, animate } from 'framer-motion'
 import Left from './Left/comp'
 import Right from './Right/comp'
 import LeftTag from './Left/tag'
@@ -12,12 +12,26 @@ import RightBg from './Right/bg'
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
   const mouseX = useMotionValue(0)
+  
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const bounds = containerRef.current?.getBoundingClientRect()
     if (!bounds) return
-    const x = e.clientX - bounds.left
+    const x = e.clientX
+      const delta = window.innerWidth - x
+    animate(mouseX, delta, {
+      duration: 0.8,
+      ease: [0.49, 0.04, 0.5, 0.99],
+    })
     mouseX.set(x)
+  }
+
+  const handleMouseLeave = ()=>{
+ animate(mouseX, window.innerWidth/2, {
+      duration: 0.8,
+      ease: [0.49, 0.04, 0.5, 0.99],
+    })
+
   }
 
   return (
@@ -25,6 +39,7 @@ export default function Home() {
       ref={containerRef}
       className="w-screen h-screen flex overflow-hidden"
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <RightBg mouseX={mouseX}/>
       <LeftBg mouseX={mouseX}/>
@@ -36,3 +51,4 @@ export default function Home() {
     </div>
   )
 }
+

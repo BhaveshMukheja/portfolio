@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion, useTransform, MotionValue } from 'framer-motion'
 import useWindowWidth from '@/app/Hooks/useWindowWidth'
-import CodingImg from '../../../../../public/assets/coding.png'
+// import CodingImg from '../../../../../public/assets/soft.png'
 import Image from 'next/image'
 
 type Props = {
@@ -14,8 +14,8 @@ const bg = ({ mouseX }: Props) => {
 
     const width = useWindowWidth()
   
-    const translateX = useTransform(mouseX, [0, width], ['50%', '0%']) // Reveal left image as mouse moves left
-    const opacity = useTransform(mouseX, [width/6, width/2], [0, 1])
+    const translateX = useTransform(mouseX, [0, width], ['0', '50%']) // Reveal left image as mouse moves left
+    const opacity = useTransform(mouseX, [width/2, width-width/6], [1, 0])
 
     // console.log(mouseX)
  
@@ -29,9 +29,9 @@ const bg = ({ mouseX }: Props) => {
 type: 'tween',
     ease: 'easeOut',
     duration: 0.5
-  }} className='text-5xl absolute bottom-[0] right-[10%] rotate-5'>
+  }} className='text-5xl absolute right-[50%] bottom-0 overflow-hidden'>
    
-   <Image src={CodingImg} alt='Coding image'/>
+
         </motion.div>
     </div>
   )
