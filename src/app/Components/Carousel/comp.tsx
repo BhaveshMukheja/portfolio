@@ -6,8 +6,8 @@ import Left from './Left/comp'
 import Right from './Right/comp'
 import LeftTag from './Left/tag'
 import RightTag from './Right/tag'
-import LeftBg from './Left/bg'
-import RightBg from './Right/bg'
+// import LeftBg from './Left/bg'
+// import RightBg from './Right/bg'
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -41,8 +41,8 @@ export default function Home() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <RightBg mouseX={mouseX}/>
-      <LeftBg mouseX={mouseX}/>
+      {/* <RightBg mouseX={mouseX}/> */}
+      {/* <LeftBg mouseX={mouseX}/> */}
       <LeftTag mouseX={mouseX}/>
       <RightTag mouseX={mouseX}/>
       <Left mouseX={mouseX} />

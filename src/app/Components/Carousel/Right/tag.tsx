@@ -24,7 +24,7 @@ const tag = ({ mouseX }: Props) => {
           ease: "easeOut",
           duration: 0.5,
         }}
-        className="text-5xl absolute top-[20%] right-[10%]"
+        className="text-5xl absolute top-[30%] right-[10%]"
       >
         Software<br></br> Developer
         <p className="text-lg mt-5">

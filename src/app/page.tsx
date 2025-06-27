@@ -8,8 +8,9 @@ import Competions from './Components/Competitions/comp'
 import AboutMe from './Components/AboutMe/comp'
 
 
+
 export default function Home() {
-  
+
 
   return (
     <>

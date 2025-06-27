@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Lexend_Tera, Roboto_Mono, Newsreader, Pacifico } from 'next/font/google';
 import "./globals.css";
+import SkillHoverProvider from './Context/skillHoverContext'
+
 
 const lexend = Lexend_Tera({
   subsets: ['latin'],
@@ -49,6 +51,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
        <head>
@@ -64,7 +67,9 @@ export default function RootLayout({
     ${geistMono.variable}
     antialiased `}
       >
+        <SkillHoverProvider>
         {children}
+        </SkillHoverProvider>
       </body>
     </html>
   );

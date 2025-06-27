@@ -5,46 +5,83 @@ import { useRef, useState, useMemo, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Billboard, Text, TrackballControls } from '@react-three/drei'
 import { Html } from '@react-three/drei'
+import { useskillHoverContext } from '@/app/Context/skillHoverContext'
 
 
 const skills = [
-  'html', 'css', 'tailwindcss','cpp', 'react', 'node', 'javascript', 'typescript', 'python', 'next', 'prisma', 'mongo', 'postgres', 'express', 'r','vite', 'tensorflow', 'pytorch', 'opencv' 
+  'c', 'cpp', 'javascript', 'typescript', 'python', 'r', 'html', 'css', 'tailwindcss', 'react', 'next', 'vite', 'node', 'express', 'mongo', 'mongoose', 'prisma', 'postgresql', 'tensorflow', 'keras', 'opencv', 'pytorch', 'scikitlearn'
 ]
 
-function Word({ children, position }: { children: string; position: THREE.Vector3 }) {
-  const color = new THREE.Color()
+const hoverSkills = [
+  {
+    id:1,
+    skills:['c', 'cpp', 'javascript', 'typescript', 'python', 'r']
+  },
+  {
+    id:2,
+    skills:['html', 'css', 'tailwindcss', 'javascript', 'typescript']
+  },
+  {
+    id:3,
+    skills:['react', 'next', 'vite']
+  },
+  {
+    id:4,
+    skills:['node', 'express', 'python', 'mongo', 'mongoose', 'prisma', 'postgresql']
+  },
+  {
+    id:5,
+    skills:['mongo', 'mongoose', 'prisma', 'postgresql']
+  },
+  {
+    id:6,
+    skills:['r', 'tensorflow', 'keras', 'opencv', 'pytorch', 'scikitlearn']
+  }
+]
+
+function Word({
+  children,
+  position,
+  hoveredKey,
+}: {
+  children: string;
+  position: THREE.Vector3;
+  hoveredKey: number | null;
+}) {
+  const color = new THREE.Color();
   const fontProps = {
     fontSize: 3.5,
     letterSpacing: -0.05,
     lineHeight: 1,
     'material-toneMapped': false,
-  }
+  };
 
-  const ref = useRef<THREE.Mesh>(null)
-  const [hovered, setHovered] = useState(false)
+  const ref = useRef<THREE.Mesh>(null);
+  const [hovered, setHovered] = useState(false);
 
   const over = (e: any) => {
-    e.stopPropagation()
-    setHovered(true)
-  }
-  const out = () => setHovered(false)
+    e.stopPropagation();
+    setHovered(true);
+  };
+  const out = () => setHovered(false);
 
   useEffect(() => {
-    if (hovered) {
-      document.body.style.cursor = 'pointer'
-    }
-
-    return () => {
-      document.body.style.cursor = 'auto'
-    }
-  }, [hovered])
+    document.body.style.cursor = hovered ? 'pointer' : 'auto';
+  }, [hovered]);
 
   useFrame(() => {
     if (ref.current) {
-      const mat = ref.current.material as THREE.MeshBasicMaterial
-      mat.color.lerp(color.set(hovered ? '#00ff88' : 'white'), 0.1)
+      const mat = ref.current.material as THREE.MeshBasicMaterial;
+      mat.color.lerp(color.set(hovered ? '#00ff88' : 'white'), 0.1);
     }
-  })
+  });
+
+  // 🧠 Find the current hovered skill group
+  const activeSkills =
+    hoverSkills.find((group) => group.id === hoveredKey)?.skills || [];
+
+  // 🖤 Gray out everything except those in activeSkills
+  const isActive = activeSkills.includes(children);
 
   return (
     <Billboard position={position}>
@@ -57,56 +94,65 @@ function Word({ children, position }: { children: string; position: THREE.Vector
         material-depthTest={false}
         material-transparent={true}
         renderOrder={999}
-        
       >
         <Html center>
-    <i className={`ci ci-${children} ci-2x`} />
-  </Html>
+          <i
+            className={`ci ci-${children} ci-2x text-black transition-scale duration-300 ${
+              isActive ? 'scale-125' : 'filter grayscale'
+            }`}
+          />
+        </Html>
       </Text>
     </Billboard>
-  )
+  );
 }
 
 
-function Cloud({ radius = 40 }) {
-  const groupRef = useRef<THREE.Group>(null)
+function Cloud({ radius = 40, hoveredKey }: { radius?: number; hoveredKey: number | null }) {
+  const groupRef = useRef<THREE.Group>(null);
 
   const positions = useMemo(() => {
-    const spherical = new THREE.Spherical()
+    const spherical = new THREE.Spherical();
     return skills.map((_, i) => {
-      const phi = Math.acos(-1 + (2 * i) / skills.length)
-      const theta = Math.sqrt(skills.length * Math.PI) * phi
-      return new THREE.Vector3().setFromSpherical(spherical.set(radius, phi, theta))
-    })
-  }, [radius])
+      const phi = Math.acos(-1 + (2 * i) / skills.length);
+      const theta = Math.sqrt(skills.length * Math.PI) * phi;
+      return new THREE.Vector3().setFromSpherical(spherical.set(radius, phi, theta));
+    });
+  }, [radius]);
 
-  // ✅ This is now inside Canvas
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.002
+      groupRef.current.rotation.y += 0.002;
     }
-  })
+  });
 
   return (
     <group ref={groupRef}>
       {skills.map((skill, index) => (
-        <Word key={index} position={positions[index]} children={skill}  />
+        <Word
+          key={index}
+          position={positions[index]}
+          children={skill}
+          hoveredKey={hoveredKey}
+        />
       ))}
     </group>
-  )
+  );
 }
 
-export default function comp() {
+export default function Comp() {
+  const { hoveredKey } = useskillHoverContext();
+
   return (
-    <div className=' '>
-    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 80], fov: 90 }} style={{ height: '600px', width: '100%'}}>
-      <fog attach="fog" args={['#202025', 0, 80]} />
-      <ambientLight intensity={1.2} />
-      <Suspense fallback={null}>
-        <Cloud radius={40}  />
-      </Suspense>
-      <TrackballControls noZoom />
-    </Canvas>
+    <div>
+      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 80], fov: 90 }} style={{ height: '600px', width: '100%' }}>
+        <fog attach="fog" args={['#202025', 0, 80]} />
+        <ambientLight intensity={1.2} />
+        <Suspense fallback={null}>
+          <Cloud radius={40} hoveredKey={hoveredKey} />
+        </Suspense>
+        <TrackballControls noZoom />
+      </Canvas>
     </div>
-  )
+  );
 }

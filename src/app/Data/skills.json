@@ -2,33 +2,39 @@
      {
         "title": "Programming Languages",
         "skills": "C, C++, JavaScript, Typescript, Python, R",
-        "logo":"cpp"
+        "logo":"cpp",
+        "id":1
         
     },
     {
         "title": "Web Design & Development",
         "skills": "HTML, CSS, Tailwind CSS, JavaScript, Typescript",
-        "logo":"html"
+        "logo":"html",
+        "id":2
     },
     {
         "title": "Frontend Javascript Frameworks",
         "skills": "React, Next, Vite",
-        "logo":"react"
+        "logo":"react",
+        "id":3
     },
     {
         "title": "Backend Frameworks",
         "skills": "Node.js, Express.js, Python",
-        "logo":"node"
+        "logo":"node",
+        "id":4
     },
     {
         "title": "Database Management System",
         "skills": "MonogoDB, Mongoose, Prisma ORM, Postgres",
-        "logo":"mongo"
+        "logo":"mongo",
+        "id":5
     },
     {
         "title": "Data Processing and Machine Learning",
         "skills": "R, scikit-learn, PyTorch, Tensorflow, Keras, OpenCV",
-        "logo":"tensorflow"
+        "logo":"tensorflow",
+        "id":6
     }
     
 ]
