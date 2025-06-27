@@ -5,10 +5,12 @@ import Skill from './Components/Skills/comp'
 import Timeline from './Components/Timeline/comp'
 import Projects from './Components/Projects/comp'
 import Competions from './Components/Competitions/comp'
+import AboutMe from './Components/AboutMe/comp'
+
 
 
 export default function Home() {
-  
+
 
   return (
     <>
@@ -18,7 +20,8 @@ export default function Home() {
       <Timeline/>
       <Projects/>
       <Competions/>
-      
+      <AboutMe/>
+
     </>
   )
 }

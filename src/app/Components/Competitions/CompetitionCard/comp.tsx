@@ -1,72 +1,60 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import PixelCard from "../PixelCard/comp";
 
 interface CompetitonsCardProps {
   key: number;
   data: {
-    title:string,
-    year:string,
-    descrip:string,
-    medal:string
+    title: string;
+    year: string;
+    descrip: string;
+    medal: string;
   };
 }
 
 const ProjectCard: React.FC<CompetitonsCardProps> = ({ data }) => {
-//   const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div>
       <div
-        // onMouseEnter={() => setIsHovered(true)}
-        // onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         className="relative"
       >
-        <PixelCard variant="pink"
-        >
-
-          {/* Conditionally render GitHub or Demo icon */}
-          {/* <div className="absolute right-10 top-5 cursor-pointer flex space-x-4">
-            {data.githubLink && (
-              <a
-                href={data.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="hover:text-black text-gray-500 text-xl" />
-              </a>
-            )}
-            {data.demoLink && (
-              <a href={data.demoLink} target="_blank" rel="noopener noreferrer">
-                <MdOpenInNew className="hover:text-black text-gray-500 text-xl" />
-              </a>
-            )}
-          </div> */}
-
-          <div className="flex flex-col">
-            <div className="text-xl font-semibold text-black">{data.title}</div>
-
-            <div
-              className={`text-md transition-colors my-2 duration-300 text-black
-              `}
-            >
-              {data.descrip}
-            </div>
-
-             <div
-              className={`text-md transition-colors my-2 duration-300 text-black
-              `}
-            >
-              {data.medal}
-            </div>
-             <div
-              className={`text-md transition-colors my-2 duration-300 text-black
-              `}
-            >
-              {data.year}
-            </div>
-
+        <PixelCard variant="pink">
+          <div className="w-full h-full flex items-center justify-center relative">
+            <AnimatePresence mode="wait">
+              {!isHovered ? (
+                <motion.div
+                  key="title"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute text-xl font-semibold text-black text-center"
+                >
+                  {data.title}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="details"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute flex flex-col justify-center items-center text-center"
+                >
+                  <div className="text-md my-1 text-black">{data.descrip}</div>
+                  <div className="text-md my-1 text-black">
+                    <span className="font-semibold">Rank:</span> {data.medal}
+                  </div>
+                  <div className="text-md my-1 text-black">{data.year}</div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </PixelCard>
       </div>
