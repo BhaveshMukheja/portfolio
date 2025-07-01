@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative"
+        className="w-[40%]"
       >
         <SpotlightCard
           className="custom-spotlight-card"

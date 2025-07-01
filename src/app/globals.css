@@ -11,3 +11,14 @@ html {
 @theme {
  --font-insta: Pacifico, "sans-serif";
 }
+
+@keyframes borderSpin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animate-border {
+  --border-angle: 0deg;
+  animation: borderSpin 4s linear infinite;
+}

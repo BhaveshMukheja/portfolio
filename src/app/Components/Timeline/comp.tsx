@@ -1,6 +1,8 @@
 'use client'
 import React, { useRef, useLayoutEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Card from './TimelineCard/comp'
+import expData from '../../Data/expAndEdu.json'
 
 type TimelineItem = {
   title: string
@@ -79,18 +81,19 @@ const Timeline: React.FC = () => {
 
   return (
     <>
+    
    <div className='text-5xl flex items-center justify-center'> Education and Experience</div>
-    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto px-4 py-20">
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto px-4 py-20 mt-20">
       {/* Vertical Timeline Line */}
       <motion.div
         initial={{ height: 0 }}
-        animate={inView ? { height: '100%' } : {}}
+        animate={inView ? { height: '80%' } : {}}
         transition={{ duration: 2, ease: 'easeInOut' }}
         className="absolute left-1/2 transform -translate-x-1/2 top-0 w-1 bg-blue-500 z-0"
       />
       {/* Cards */}
-      {timelineData.map((item, i) => (
-        <TimelineCard key={i} item={item} index={i} />
+      {expData.map((item, i) => (
+        < Card data={item} key={i} id={i}/>
       ))}
     </div>
     </>
