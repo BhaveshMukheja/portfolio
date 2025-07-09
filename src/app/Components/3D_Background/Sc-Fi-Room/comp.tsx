@@ -5,6 +5,8 @@ import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { MeshStandardMaterial, Mesh } from 'three'
 import { Leva, useControls } from 'leva'
+import { useTexture } from '@react-three/drei'
+
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -53,8 +55,8 @@ export default function comp(props: Props) {
         <mesh geometry={nodes.Object_7.geometry} material={materials.Carpet} />
         <mesh geometry={nodes.Object_8.geometry} material={materials.Emission} />
         <mesh geometry={nodes.Object_9.geometry} material={materials.Emission_Blue} />
-        <mesh geometry={nodes.Object_10.geometry} material={materials.Foam_Acoustic} />
-        <mesh geometry={nodes.Object_11.geometry} material={materials.Foam_Acoustic} />
+        {/* <mesh geometry={nodes.Object_10.geometry} material={materials.Foam_Acoustic} /> */}
+        {/* <mesh geometry={nodes.Object_11.geometry} material={materials.Foam_Acoustic} /> */}
         <mesh geometry={nodes.Object_12.geometry} material={materials.Trim_Sheet_Wall} />
         <mesh geometry={nodes.Object_13.geometry} material={materials.Monitor_Single} />
       </group>

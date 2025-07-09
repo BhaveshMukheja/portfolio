@@ -1,43 +1,72 @@
-'use client'
+"use client";
 
-import * as THREE from 'three'
-import { useRef, useState, useMemo, useEffect, Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Billboard, Text, TrackballControls } from '@react-three/drei'
-import { Html } from '@react-three/drei'
-import { useskillHoverContext } from '@/app/Context/skillHoverContext'
-
+import * as THREE from "three";
+import { useRef, useState, useMemo, useEffect, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Billboard, Text, TrackballControls } from "@react-three/drei";
+import { Html } from "@react-three/drei";
+import { useskillHoverContext } from "@/app/Context/skillHoverContext";
 
 const skills = [
-  'c', 'cpp', 'javascript', 'typescript', 'python', 'r', 'html', 'css', 'tailwindcss', 'react', 'next', 'vite', 'node', 'express', 'mongo', 'mongoose', 'prisma', 'postgresql', 'tensorflow', 'keras', 'opencv', 'pytorch', 'scikitlearn'
-]
+  "c",
+  "cpp",
+  "javascript",
+  "typescript",
+  "python",
+  "r",
+  "html",
+  "css",
+  "tailwindcss",
+  "react",
+  "next",
+  "vite",
+  "node",
+  "express",
+  "mongo",
+  "mongoose",
+  "prisma",
+  "postgresql",
+  "tensorflow",
+  "keras",
+  "opencv",
+  "pytorch",
+  "scikitlearn",
+];
 
 const hoverSkills = [
   {
-    id:1,
-    skills:['c', 'cpp', 'javascript', 'typescript', 'python', 'r']
+    id: 1,
+    skills: ["c", "cpp", "javascript", "typescript", "python", "r"],
   },
   {
-    id:2,
-    skills:['html', 'css', 'tailwindcss', 'javascript', 'typescript']
+    id: 2,
+    skills: ["html", "css", "tailwindcss", "javascript", "typescript"],
   },
   {
-    id:3,
-    skills:['react', 'next', 'vite']
+    id: 3,
+    skills: ["react", "next", "vite"],
   },
   {
-    id:4,
-    skills:['node', 'express', 'python', 'mongo', 'mongoose', 'prisma', 'postgresql']
+    id: 4,
+    skills: [
+      "node",
+      "express",
+      "python",
+      "mongo",
+      "mongoose",
+      "prisma",
+      "postgresql",
+    ],
   },
   {
-    id:5,
-    skills:['mongo', 'mongoose', 'prisma', 'postgresql']
+    id: 5,
+    skills: ["mongo", "mongoose", "prisma", "postgresql"],
   },
   {
-    id:6,
-    skills:['r', 'tensorflow', 'keras', 'opencv', 'pytorch', 'scikitlearn']
-  }
-]
+    id: 6,
+    skills: ["r", "tensorflow", "keras", "opencv", "pytorch", "scikitlearn"],
+  },
+];
 
 function Word({
   children,
@@ -53,7 +82,7 @@ function Word({
     fontSize: 3.5,
     letterSpacing: -0.05,
     lineHeight: 1,
-    'material-toneMapped': false,
+    "material-toneMapped": false,
   };
 
   const ref = useRef<THREE.Mesh>(null);
@@ -66,13 +95,13 @@ function Word({
   const out = () => setHovered(false);
 
   useEffect(() => {
-    document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    document.body.style.cursor = hovered ? "pointer" : "auto";
   }, [hovered]);
 
   useFrame(() => {
     if (ref.current) {
       const mat = ref.current.material as THREE.MeshBasicMaterial;
-      mat.color.lerp(color.set(hovered ? '#00ff88' : 'white'), 0.1);
+      mat.color.lerp(color.set(hovered ? "#00ff88" : "white"), 0.1);
     }
   });
 
@@ -98,7 +127,7 @@ function Word({
         <Html center>
           <i
             className={`ci ci-${children} ci-2x text-black transition-scale duration-300 ${
-              isActive ? 'scale-125' : 'filter grayscale'
+              isActive ? "scale-125" : "filter grayscale"
             }`}
           />
         </Html>
@@ -107,8 +136,13 @@ function Word({
   );
 }
 
-
-function Cloud({ radius = 40, hoveredKey }: { radius?: number; hoveredKey: number | null }) {
+function Cloud({
+  radius = 40,
+  hoveredKey,
+}: {
+  radius?: number;
+  hoveredKey: number | null;
+}) {
   const groupRef = useRef<THREE.Group>(null);
 
   const positions = useMemo(() => {
@@ -116,7 +150,9 @@ function Cloud({ radius = 40, hoveredKey }: { radius?: number; hoveredKey: numbe
     return skills.map((_, i) => {
       const phi = Math.acos(-1 + (2 * i) / skills.length);
       const theta = Math.sqrt(skills.length * Math.PI) * phi;
-      return new THREE.Vector3().setFromSpherical(spherical.set(radius, phi, theta));
+      return new THREE.Vector3().setFromSpherical(
+        spherical.set(radius, phi, theta)
+      );
     });
   }, [radius]);
 
@@ -145,8 +181,12 @@ export default function Comp() {
 
   return (
     <div>
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 80], fov: 90 }} style={{ height: '600px', width: '100%' }}>
-        <fog attach="fog" args={['#202025', 0, 80]} />
+      <Canvas
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 80], fov: 90 }}
+        style={{ height: "600px", width: "100%" }}
+      >
+        <fog attach="fog" args={["#202025", 0, 80]} />
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
           <Cloud radius={40} hoveredKey={hoveredKey} />

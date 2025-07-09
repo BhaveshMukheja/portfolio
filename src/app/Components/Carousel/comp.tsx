@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div
       ref={containerRef}
-      className="w-screen h-screen flex overflow-hidden"
+      className="w-screen h-screen flex overflow-hidden bg-white"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

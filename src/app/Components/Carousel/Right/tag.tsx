@@ -24,10 +24,10 @@ const tag = ({ mouseX }: Props) => {
           ease: "easeOut",
           duration: 0.5,
         }}
-        className="text-5xl absolute top-[30%] right-[10%]"
+        className="absolute top-[35%] right-[5%]"
       >
-        Software<br></br> Developer
-        <p className="text-lg mt-5">
+        <p className="text-5xl font-rob">Web Developer</p>
+        <p className="text-lg mt-5 text-gray-500">
           Front end developer who writes
           <br />
           clean, elegant, and efficient code
