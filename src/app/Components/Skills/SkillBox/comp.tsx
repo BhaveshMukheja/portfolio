@@ -7,7 +7,7 @@
       <div className='grid grid-cols-2 gap-10'>
         {skillData.map((item, index) => (
   
-              <Box id={item.id} logo={item.logo} title={item.title} skills={item.skills} />
+              <Box key={index} id={item.id} logo={item.logo} title={item.title} skills={item.skills} />
           
         ))}
       </div>

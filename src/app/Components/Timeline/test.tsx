@@ -12,6 +12,7 @@ import { IoIosSchool } from "react-icons/io";
 import { IoPlanet } from "react-icons/io5";
 import { MdEventAvailable } from "react-icons/md";
 import { FaSchoolFlag } from "react-icons/fa6";
+import "./test.css";
 
 const iconMap: Record<string, React.ComponentType> = {
   GiCircuitry,
@@ -27,20 +28,27 @@ const Test = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div>
-      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-8 mb-16">
+    <div className="min-h-screen">
+      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-8 mb-16 uppercase">
         Experience and Education
       </div>
 
-      <VerticalTimeline>
+      <VerticalTimeline lineColor="transparent">
         {expData.map((item, i) => {
           const IconComponent = iconMap[item.icon];
           const isHovered = hoveredIndex === i;
 
           return (
             <VerticalTimelineElement
+              contentStyle={{
+                border: `2px solid ${item["icon-color"]}`,
+                borderRadius: "5px",
+              }}
+              contentArrowStyle={{
+                borderRight: `7px solid ${item["icon-color"]}`,
+              }}
               key={i}
-              className="vertical-timeline-element--work transition-all duration-200 hover:-translate-y-1 relative overflow-hidden"
+              className="vertical-timeline-element--work transition-all duration-200 hover:-translate-y-1 relative overflow-hidden "
               date={item.time}
               iconStyle={{ background: item["icon-color"], color: "#fff" }}
               icon={IconComponent ? <IconComponent /> : null}
@@ -52,33 +60,39 @@ const Test = () => {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div
-                  className={`w-16 h-16 absolute ${
+                  className={`w-14 h-14 absolute ${
                     i % 2 === 0 ? "-left-5" : "-right-5"
-                  } -top-5 rounded-full transition-all duration-300 ${
-                    isHovered ? "scale-[15.5] opacity-70" : "scale-100"
+                  } -top-5 rounded-full transition-all duration-300 opacity-80 ${
+                    isHovered ? "scale-[18]" : "scale-100"
                   }`}
                   style={{ backgroundColor: item["icon-color"] }}
                 ></div>
 
                 <div
-                  className={`rounded-2xl border border-transparent animate-border relative ${
+                  className={`rounded-2xl border border-transparent animate-border relative  ${
                     isHovered ? "text-white" : ""
                   }`}
                 >
-                  <img
-                    src={item.logo}
-                    alt={item.title}
-                    className={`absolute ${
-                      i === 0 || i === 1 ? "w-24" : "w-16"
-                    } right-5`}
-                  />
+                  {item.logo?.trim() ? (
+                    <img
+                      src={item.logo}
+                      alt={item.title}
+                      className={`absolute ${
+                        i === 0 || i === 1 ? "w-24" : "w-16"
+                      } right-5`}
+                    />
+                  ) : null}
                   <h3 className="vertical-timeline-element-title  font-semibold">
                     {item.title}
                   </h3>
-                  <h4 className="vertical-timeline-element-subtitle text-gray-500">
+                  <h4
+                    className={`vertical-timeline-element-subtitle  ${
+                      isHovered ? "text-gray-200" : "text-gray-500"
+                    }`}
+                  >
                     {item.role}
                   </h4>
-                  <p>{item.descrip}</p>
+                  <p className="w-[80%]">{item.descrip}</p>
                 </div>
               </div>
             </VerticalTimelineElement>

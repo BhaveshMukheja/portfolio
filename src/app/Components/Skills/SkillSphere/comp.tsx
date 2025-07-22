@@ -187,7 +187,7 @@ export default function Comp() {
         style={{ height: "600px", width: "100%" }}
       >
         <fog attach="fog" args={["#202025", 0, 80]} />
-        <ambientLight intensity={1.2} />
+        <ambientLight intensity={20} />
         <Suspense fallback={null}>
           <Cloud radius={40} hoveredKey={hoveredKey} />
         </Suspense>

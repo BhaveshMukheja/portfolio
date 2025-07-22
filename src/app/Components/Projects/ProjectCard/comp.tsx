@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import SpotlightCard from "../SpotightCard/comp";
 import { FaGithub } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
+import { useProjectHoverContext } from "@/app/Context/projectHoverContext";
 
 interface ProjectCardProps {
   key: number;
@@ -15,17 +16,23 @@ interface ProjectCardProps {
     stack: Array<string>;
     image: string;
   };
+  id: number
+  type: string
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ id, data, type }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const {setProjectHoveredKey, setProjectType} = useProjectHoverContext();
+
+
+
 
   return (
-    <div>
+    <div className="">
       <div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="w-[40%]"
+        onMouseEnter={() => {setIsHovered(true); setProjectHoveredKey(id); setProjectType(type)}}
+        onMouseLeave={() => {setIsHovered(false); setProjectHoveredKey(0); setProjectType("blackScreen")}}
+        className="w-[45%]"
       >
         <SpotlightCard
           className="custom-spotlight-card"
@@ -39,12 +46,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="hover:text-white text-gray-500 text-xl" />
+                <FaGithub className="hover:text-white text-gray-300 text-xl" />
               </a>
             )}
             {data.demoLink && (
               <a href={data.demoLink} target="_blank" rel="noopener noreferrer">
-                <MdOpenInNew className="hover:text-white text-gray-500 text-xl" />
+                <MdOpenInNew className="hover:text-white text-gray-300 text-xl" />
               </a>
             )}
           </div>
@@ -53,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
 
             <div
               className={`text-md transition-colors my-2 duration-300 ${
-                isHovered ? "text-white" : "text-gray-500"
+                isHovered ? "text-white" : "text-gray-300"
               }`}
             >
               {data.descrip}
@@ -63,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
               {data.stack.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 rounded-xs px-2 flex items-center justify-center text-black mt-2"
+                  className="bg-indigo-900/80 rounded-xs px-2 flex items-center justify-center text-white mt-2"
                 >
                   {item}
                 </div>

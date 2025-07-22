@@ -3,7 +3,7 @@
     "logo": "assets/experience/addverb.png",
      "title":"Addverb Technologies, Nodia",
     "role": "Incoming Gradutate Engnieer Trainee",
-    "time": "2025 - ",
+    "time": "Aug'25 - ",
     "descrip": "",
     "icon": "GiCircuitry",
     "icon-color":"#EC2F23"
@@ -13,7 +13,7 @@
     "logo": "assets/experience/arogo.png",
      "title":"Arogo AI",
     "role": "Led Dev Intern",
-    "time": "2025 - Present",
+    "time": "Jun'25 - Present",
     "descrip": "Responsibe for the web developement team to build an AI powerd Health Care site for doctors as well as patients",
     "icon":"RiMentalHealthFill",
     "icon-color":"#4F0DD3"
@@ -23,7 +23,7 @@
      "title":"Indian Institute of Technology, Kharagpur",
     "role": "B.S. (Honors) Physics",
     "time": "2021-2025",
-    "descrip": "Did what I had to do, the best time of my life",
+    "descrip": "Can never be grateful enough for the time I spent here. Can't express in words what I learnt about the world and me here.",
     "icon":"IoIosSchool",
     "icon-color":"#33247B"
   },
@@ -31,8 +31,8 @@
     "logo": "assets/experience/iia.png",
      "title":"Indian Institute of Astrophysics, Bangalore",
     "role": "Data Science Intern ",
-    "time": "2023-Present",
-    "descrip": "",
+    "time": "Dec'23-Present",
+    "descrip": "Detecting Dual Nuclei in closely merging Galaxies using Image Processing and Machine Learning Techniques over SDSS Data. Used IITKGP's HPC Param Shakti to train the YOLOv11x-obb model ",
     "icon":"IoPlanet",
     "icon-color":"#9ACCFD"
   },
@@ -41,7 +41,7 @@
     "title":"Jif.ai",
     "role": "Fullstack Developer Intern",
     "time": "Mar'24-May'24",
-    "descrip": "Responsive to develop the frontend and backend for an AI Powered event planning customizable website",
+    "descrip": "Developed a platform enabling users to generate and customize event sites with GenAI prompts and manual customization",
     "icon":"MdEventAvailable",
     "icon-color":"black"
   },
@@ -50,7 +50,7 @@
      "title":"S.D. Public School, Muzaffarnagar",
     "role": "Student",
     "time": "2007-2021",
-    "descrip": "The first in education",
+    "descrip": "Completed my schooling under the CBSE curriculum, achieving 97.4% in Class X and 97.8% in Class XII.",
     "icon":"FaSchoolFlag",
     "icon-color":"#EC9B12"
   }

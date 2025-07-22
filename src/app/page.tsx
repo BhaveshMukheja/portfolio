@@ -7,7 +7,7 @@ import Projects from './Components/Projects/comp'
 import Competions from './Components/Competitions/comp'
 import AboutMe from './Components/AboutMe/comp'
 import SciFiRoom from './Components/3D_Background/comp'
-import { GirlRoom } from './Components/3D_Background/Sc-Fi-Room/girlRoom'
+import NavbarTest from './Components/Navbar/test'
 
 
 
@@ -18,36 +18,19 @@ export default function Home() {
     <>
    
       <Navbar />
+      <SciFiRoom/>
       <Carousel />
       <Skill />
       <Timeline/>
+      <div className='h-screen'></div>
+      <div className='h-screen'></div>
       <Projects/>
+      <div className='h-screen'></div>
       <Competions/>
       <AboutMe/>
-      {/* <GirlRoom/> */}
-      <SciFiRoom/>
+
 
     </>
   )
 }
 
-/*
-on skill and experience and education 
-{"posX":2.5}
-{"posY":-0.10000000000000009}
-{"posZ":30.5}
-{"rotX":0}
-{"rotY":0}
-{"rotZ":0}
-{"sca":10}
-*/
-/*
-on projects 
-{"posX":3.9000000000000004}
-{"posY":-0.9000000000000004}
-{"posZ":20.5}
-{"rotX":0.2}
-{"rotY":0}
-{"rotZ":0}
-{"sca":10}
-*/ 

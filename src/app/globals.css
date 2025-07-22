@@ -1,7 +1,7 @@
 /* globals.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Lexend+Tera:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Lexend+Tera:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 html {
@@ -9,19 +9,51 @@ html {
 }
 
 @theme {
- --font-insta: Pacifico, "sans-serif";
- --font-newsreader: "Newsreader", serif;
- --font-zilla: "Zilla Slab", serif;
- --font-rob: "Roboto", sans-serif;
-}
+  --font-insta: Pacifico, "sans-serif";
+  --font-newsreader: "Newsreader", serif;
+  --font-zilla: "Zilla Slab", serif;
+  --font-rob: "Roboto", sans-serif;
+  --animate-slidein: slide-in-top 0.3s both;
+  --animate-border: border-rotate 4s linear infinite;
+  --animate-wave: wave 1.5s ease-in-out infinite;
 
-@keyframes borderSpin {
-  to {
-    --border-angle: 360deg;
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-25px);
+      opacity: 0;
+      color: black;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      color: white;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-2px);
+    }
+    75% {
+      transform: translateY(2px);
+    }
+  }
+
+  @keyframes border-rotate {
+    to {
+      --border-angle: 360deg;
+    }
   }
 }
 
-.animate-border {
-  --border-angle: 0deg;
-  animation: borderSpin 4s linear infinite;
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
 }

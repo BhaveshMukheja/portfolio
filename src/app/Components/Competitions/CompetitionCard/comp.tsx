@@ -11,11 +11,13 @@ interface CompetitonsCardProps {
     year: string;
     descrip: string;
     medal: string;
+    card_color:  "default" | "orange" | "green" | "blue" | "purple" | "pink" | "yellow";
   };
 }
 
 const ProjectCard: React.FC<CompetitonsCardProps> = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
+
 
   return (
     <div>
@@ -24,7 +26,7 @@ const ProjectCard: React.FC<CompetitonsCardProps> = ({ data }) => {
         onMouseLeave={() => setIsHovered(false)}
         className="relative"
       >
-        <PixelCard variant="pink">
+        <PixelCard variant={data.card_color}>
           <div className="w-full h-full flex items-center justify-center relative">
             <AnimatePresence mode="wait">
               {!isHovered ? (
@@ -34,7 +36,7 @@ const ProjectCard: React.FC<CompetitonsCardProps> = ({ data }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute text-xl font-semibold text-black text-center"
+                  className={`absolute text-xl font-semibold text-white text-center font-rob`}
                 >
                   {data.title}
                 </motion.div>
@@ -47,11 +49,11 @@ const ProjectCard: React.FC<CompetitonsCardProps> = ({ data }) => {
                   transition={{ duration: 0.4 }}
                   className="absolute flex flex-col justify-center items-center text-center"
                 >
-                  <div className="text-md my-1 text-black">{data.descrip}</div>
-                  <div className="text-md my-1 text-black">
-                    <span className="font-semibold">Rank:</span> {data.medal}
+                  <div className="text-lg my-1 text-white font-semibold" >{data.descrip}</div>
+                  <div className="text-md my-1 text-white">
+                    <span className="font-semibold ">Rank:</span> {data.medal}
                   </div>
-                  <div className="text-md my-1 text-black">{data.year}</div>
+                  <div className="text-md my-1 text-gray-300">{data.year}</div>
                 </motion.div>
               )}
             </AnimatePresence>

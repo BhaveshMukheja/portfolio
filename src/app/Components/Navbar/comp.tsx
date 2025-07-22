@@ -4,35 +4,40 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Link from 'next/link'
-import logobg from '../../../../public/assets/logo.png'
 import Image from 'next/image'
+import logoBg from '../../../../public/assets/logo.png'
 
-
-const navItems = ['Home', 'Projects', 'About', 'Contact']
+const navItems = ['Home', 'Resume', 'Publications', 'About Me', 'Contact', 'Blog']
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [active, setActive] = useState('Home')
   const [hovered, setHovered] = useState<string | null>(null)
 
+  // Simplified scroll-based active section detection
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const sectionOffsets = navItems.map((item) => {
-        const section = document.getElementById(item.toLowerCase())
-        return section ? section.offsetTop : 0
+      let closest = 'Home'
+      let minDistance = Infinity
+
+      navItems.forEach((item) => {
+        const id = item.toLowerCase().replace(/\s+/g, '-')
+        const section = document.getElementById(id)
+        if (section) {
+          const distance = Math.abs(section.getBoundingClientRect().top - 100)
+          if (distance < minDistance) {
+            closest = item
+            minDistance = distance
+          }
+        }
       })
 
-      for (let i = 0; i < sectionOffsets.length; i++) {
-        const current = sectionOffsets[i]
-        const next = sectionOffsets[i + 1] ?? Infinity
-        if (scrollY >= current - 80 && scrollY < next - 80) {
-          setActive(navItems[i])
-        }
-      }
+      setActive(closest)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -49,17 +54,15 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full absolute top-0 left-0 bg-black bg-opacity-80 backdrop-blur-lg z-50 shadow-md"
     >
-      <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-        {/* Logo */}
-        
-           <Image src={logobg} width={'50'} height={'50'} alt=''/>  
-        
+      <div className="max-w-7xl mx-auto p-2 flex justify-between items-center">
+        <Link href="/"><Image src={logoBg} width={50} height={50} alt="Logo" /></Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-10 text-white relative">
           {navItems.map((item) => {
             const isActive = active === item
             const isHovered = hovered === item
+
             return (
               <motion.li
                 key={item}
@@ -72,17 +75,14 @@ export default function Navbar() {
                 onMouseLeave={() => setHovered(null)}
               >
                 <Link
-                  href={`#${item.toLowerCase()}`}
+                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                   className={`transition-colors duration-300 ${
                     isActive ? 'text-yellow-400' : 'text-white'
-                  } ${isHovered?'text-white': 'text-white'}`}
+                  }`}
                 >
                   {item}
                 </Link>
-
-                {(isActive || isHovered) && (
-                  <motion.div {...underline} />
-                )}
+                {(isActive || isHovered) && <motion.div {...underline} />}
               </motion.li>
             )
           })}
@@ -119,7 +119,9 @@ export default function Navbar() {
                   setIsOpen(false)
                 }}
               >
-                <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+                <Link href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}>
+                  {item}
+                </Link>
               </motion.li>
             ))}
           </motion.ul>

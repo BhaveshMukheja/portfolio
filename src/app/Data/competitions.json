@@ -3,24 +3,28 @@
     "title": "Trexquant Global Alpha Researcher Challenge",
     "year": "2024",
     "descrip": "Made Predicting Algorithm for Hangman Game using BART Model",
-    "medal": "Undeclared"
+    "medal": "Undeclared",
+    "card_color":"purple"
   },
   {
     "title": "Impetus 5.0, MICA, Ahmedabad",
     "year": "2023",
     "descrip": "Product development Case Study Competition",
-    "medal": "Top 10 National Finalists"
+    "medal": "Top 10 National Finalists",
+    "card_color":"orange"
   },
   {
     "title": "National Students’ Space Challenge Case Studies",
     "year": "2022",
     "descrip": "Astronomy and Astrophyiscs Case Study Competetion, IIT Kharagpur",
-    "medal": "2"
+    "medal": "2",
+    "card_color":"blue"
   },
   {
     "title": "Mongo DB Hackathon",
     "year": "2022",
-    "descrip": "Made Unstop like platform",
-    "medal": "1"
+    "descrip": "Built a Unstop-like platform that empowers students to compete, upload, and collaborate",
+    "medal": "1",
+    "card_color":"green"
   }
 ]

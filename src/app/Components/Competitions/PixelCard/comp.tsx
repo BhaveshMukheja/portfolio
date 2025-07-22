@@ -124,37 +124,58 @@ function getEffectiveSpeed(value: number, reducedMotion: boolean) {
 
 const VARIANTS = {
   default: {
-    activeColor: null,
-    gap: 5,
-    speed: 35,
-    colors: "#f8fafc,#f1f5f9,#cbd5e1",
-    noFocus: false,
+    activeColor: '#c0c3c0ff',
+    gap: 6,
+    speed: 80,
+    colors: "#00ff6aff,#f1f5f9,#cbd5e1",
+    noFocus: true,
   },
   blue: {
     activeColor: "#e0f2fe",
     gap: 10,
-    speed: 25,
+    speed: 70,
     colors: "#e0f2fe,#7dd3fc,#0ea5e9",
-    noFocus: false,
+    noFocus: true,
   },
   yellow: {
     activeColor: "#fef08a",
-    gap: 3,
-    speed: 20,
+    gap: 6,
+    speed: 70,
     colors: "#fef08a,#fde047,#eab308",
-    noFocus: false,
+    noFocus: true,
   },
   pink: {
     activeColor: "#fecdd3",
     gap: 6,
-    speed: 80,
+    speed: 70,
     colors: "#fecdd3,#fda4af,#e11d48",
+    noFocus: true,
+  },
+    green: {
+    activeColor: "#d9f99d",
+    gap: 8,
+    speed: 70,
+    colors: "#d9f99d,#84cc16,#4d7c0f",
+    noFocus: true,
+  },
+  purple: {
+    activeColor: "#e9d5ff",
+    gap: 10,
+    speed: 70,
+    colors: "#e9d5ff,#c084fc,#9333ea",
+    noFocus: true,
+  },
+  orange: {
+    activeColor: "#ffedd5",
+    gap: 10,
+    speed: 70,
+    colors: "#ffedd5,#fdba74,#ea580c",
     noFocus: true,
   },
 };
 
 interface PixelCardProps {
-  variant?: "default" | "blue" | "yellow" | "pink";
+   variant?: keyof typeof VARIANTS;
   gap?: number;
   speed?: number;
   colors?: string;
@@ -304,7 +325,7 @@ export default function PixelCard({
   return (
     <div
       ref={containerRef}
-      className={`h-[400px] w-[300px] relative overflow-hidden grid place-items-center aspect-[4/5] border border-[#27272a] rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none ${className}`}
+      className={`h-[400px] w-[300px] relative overflow-hidden grid place-items-center aspect-[4/5] border border-gray-500 hover:border-gray-800 rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onFocus={finalNoFocus ? undefined : onFocus}
