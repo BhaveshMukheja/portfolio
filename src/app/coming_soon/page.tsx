@@ -1,7 +1,13 @@
 "use client";
 
 import React from "react";
-import { FaInstagram, FaLinkedinIn, FaGithub, FaEnvelope  } from "react-icons/fa6";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa6";
+import SeoHead from "../Components/SeoHead/comp";
 
 // Reuse classes
 const iconWrapperClasses =
@@ -34,47 +40,61 @@ const icons = [
 
 function SocialIcons() {
   return (
-    <ul className="flex gap-4">
-      {icons.map(({ Icon, bg, href }, index) => (
-        <li key={index} className="list-none">
-          <a href={href} className={iconWrapperClasses} target="blank">
-            <span
-              className={`absolute top-full left-0 w-full h-full ${bg} transition-all duration-500 ease-in-out group-hover:top-0 z-0`}
-            />
-            <span className={iconInnerClasses}>
-              <Icon />
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="flex gap-4">
+        {icons.map(({ Icon, bg, href }, index) => (
+          <li key={index} className="list-none">
+            <a href={href} className={iconWrapperClasses} target="blank">
+              <span
+                className={`absolute top-full left-0 w-full h-full ${bg} transition-all duration-500 ease-in-out group-hover:top-0 z-0`}
+              />
+              <span className={iconInnerClasses}>
+                <Icon />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
 const Page = () => {
   return (
-    <div>
+    <>
+      <SeoHead
+        title="Coming Soon | Bhavesh Mukheja"
+        description="Hang tight! Working on it! Will be back with it soon! Arigato!"
+        url=""
+        image="public/assets/projects/portfolio.png"
+      />
+      <main>
+      <div>
+        <div className="absolute top-0 w-screen h-screen bg-[url('/assets/picture.jpg')] bg-cover bg-center">
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gray-200/30 z-10" />
 
-      <div className="absolute top-0 w-screen h-screen bg-[url('/assets/picture.jpg')] bg-cover bg-center">
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gray-200/30 z-10" />
+          {/* Card */}
+          <div className="absolute right-20 bottom-10 w-[40%] h-[80%] bg-fuchsia-100/50 flex flex-col justify-center items-center z-20 text-center p-4 space-y-6">
+            <h1 className="font-tang text-6xl font-bold">
+              Thank you for visiting!
+            </h1>
 
-        {/* Card */}
-        <div className="absolute right-20 bottom-10 w-[40%] h-[80%] bg-fuchsia-100/50 flex flex-col justify-center items-center z-20 text-center p-4 space-y-6">
-          <h1 className="font-tang text-6xl font-bold">Thank you for visiting!</h1>
+            <p>
+              The page is{" "}
+              <span className="font-semibold">under development</span>. Will be
+              coming soon.
+            </p>
 
-          <p>
-            The page is <span className="font-semibold">under development</span>. Will be coming
-            soon.
-          </p>
+            <p>Until then...</p>
+            <p className="font-semibold">Let's Connect.</p>
 
-          <p>Until then...</p>
-          <p className="font-semibold">Let's Connect.</p>
-
-          <SocialIcons />
+            <SocialIcons />
+          </div>
         </div>
       </div>
-    </div>
+      </main>
+    </>
   );
 };
 
