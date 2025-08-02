@@ -28,7 +28,7 @@ const Test = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <div className="flex items-center justify-center text-5xl font-rob p-8 mt-8 mb-16 uppercase">
         Experience and Education
       </div>
@@ -43,6 +43,7 @@ const Test = () => {
               contentStyle={{
                 border: `2px solid ${item["icon-color"]}`,
                 borderRadius: "5px",
+                padding: "0px",
               }}
               contentArrowStyle={{
                 borderRight: `7px solid ${item["icon-color"]}`,
@@ -54,30 +55,33 @@ const Test = () => {
               icon={IconComponent ? <IconComponent /> : null}
             >
               <div
-                className=""
+                className="relative overflow-hidden p-6"
                 ref={i === 0 ? containerRef : null}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div
-                  className={`w-14 h-14 absolute ${
-                    i % 2 === 0 ? "-left-5" : "-right-5"
-                  } -top-5 rounded-full transition-all duration-300 opacity-80 ${
-                    isHovered ? "scale-[18]" : "scale-100"
-                  }`}
-                  style={{ backgroundColor: item["icon-color"] }}
-                ></div>
+                      <div
+                    className={`w-14 h-14 absolute z-0 ${
+                      i % 2 === 0 ? "-left-5" : "-right-5"
+                    } -top-5 rounded-full transition-all duration-400 opacity-100 ${
+                      isHovered ? "scale-[20]" : "scale-100"
+                    }`}
+                    style={{ backgroundColor: item["icon-color"] }}
+                  ></div>
 
                 <div
-                  className={`rounded-2xl border border-transparent animate-border relative  ${
+                  className={`relative z-10  ${
                     isHovered ? "text-white" : ""
                   }`}
                 >
+            
+
                   {item.logo?.trim() ? (
                     <img
-                      src={item.logo}
+
+                      src= {isHovered?item["logo-white"]:item.logo}
                       alt={item.title}
-                      className={`absolute ${
+                      className={`absolute z-20 transition-all duration-400 ${
                         i === 0 || i === 1 ? "w-24" : "w-16"
                       } right-5`}
                     />

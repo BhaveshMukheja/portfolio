@@ -20,7 +20,7 @@
     },
     {
         "title": "Backend Frameworks",
-        "skills": "Node.js, Express.js, Python",
+        "skills": "Node.js, Express.js, Python, AWS",
         "logo":"node",
         "id":4
     },
@@ -32,7 +32,7 @@
     },
     {
         "title": "Data Processing and Machine Learning",
-        "skills": "R, scikit-learn, PyTorch, Tensorflow, Keras, OpenCV",
+        "skills": "R, scikit-learn, PyTorch, Tensorflow, Keras, OpenCV, OpenAI, LangChain",
         "logo":"tensorflow",
         "id":6
     }

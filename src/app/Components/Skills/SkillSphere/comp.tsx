@@ -31,6 +31,9 @@ const skills = [
   "opencv",
   "pytorch",
   "scikitlearn",
+  "chatgpt",
+  "sql",
+  "aws"
 ];
 
 const hoverSkills = [
@@ -52,19 +55,16 @@ const hoverSkills = [
       "node",
       "express",
       "python",
-      "mongo",
-      "mongoose",
-      "prisma",
-      "postgresql",
+      "aws"
     ],
   },
   {
     id: 5,
-    skills: ["mongo", "mongoose", "prisma", "postgresql"],
+    skills: ["mongo", "mongoose", "prisma", "postgresql", "sql"],
   },
   {
     id: 6,
-    skills: ["r", "tensorflow", "keras", "opencv", "pytorch", "scikitlearn"],
+    skills: ["r", "tensorflow", "keras", "opencv", "pytorch", "scikitlearn", "chatgpt", ],
   },
 ];
 

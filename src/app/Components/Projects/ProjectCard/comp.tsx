@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, data, type }) => {
         className="w-[45%]"
       >
         <SpotlightCard
-          className="custom-spotlight-card"
+          className="custom-spotlight-card "
           spotlightColor="rgba(241, 4, 4, 0.2)"
         >
           {/* Conditionally render GitHub or Demo icon */}

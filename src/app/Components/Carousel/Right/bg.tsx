@@ -29,7 +29,7 @@ const bg = ({ mouseX }: Props) => {
 type: 'tween',
     ease: 'easeOut',
     duration: 0.5
-  }} className='text-5xl absolute right-[50%] bottom-0 overflow-hidden'>
+  }} className='text-5xl absolute bottom-0 overflow-hidden'>
    
 
         </motion.div>

@@ -24,32 +24,32 @@ const AnimatedRoom = () => {
   // Base transforms
   const rawPosX = useTransform(
     scrollYProgress,
-    [0.30, 0.45, 0.60, 0.75,0.8],
-    [2.4, 2.4, 6.4, 4.9, 2.5]
+    [0.30, 0.40, 0.50, 0.75,0.8],
+    [1.9, 2.4, 6.4, 4.9, 2.5]
   );
   const rawPosY = useTransform(
     scrollYProgress,
-    [0.30, 0.45, 0.60, 0.75,0.8],
-    [-13.3, -8.8, -8.8, -8.8, -8.8]
+    [0.30, 0.40, 0.50, 0.75,0.8],
+    [-14.2, -8.8, -8.8, -8.8, -8.8]
   );
   const rawPosZ = useTransform(
     scrollYProgress,
-    [0.30, 0.45, 0.60, 0.75,0.8],
-    [37.8, 24.3, 30, 33.3, 37.8]
+    [0.30, 0.40, 0.50, 0.75,0.8],
+    [40.0, 24.3, 30, 33.3, 37.8]
   );
   const rawRotX = useTransform(
     scrollYProgress,
-    [0.30, 0.45, 0.60, 0.75,0.8],
+    [0.30, 0.40, 0.50, 0.75,0.8],
     [0.0, 0.0, 0.0, 0.0, 0.0]
   );
   const rawRotY = useTransform(
     scrollYProgress,
-    [0.30, 0.45, 0.60, 0.75,0.8],
+    [0.30, 0.40, 0.50, 0.75,0.8],
     [0.0, -0.7, -1.1 , -1.4, -1.5]
   );
   const rawRotZ = useTransform(
     scrollYProgress,
-    [0.30, 0.45,0.60,0.75,0.8],
+    [0.30, 0.40,0.60,0.75,0.8],
     [0.0, 0, 0 ,0, 0]
   );
   const rawScale = useTransform(scrollYProgress, [0.30, 0.5], [1, 1]);

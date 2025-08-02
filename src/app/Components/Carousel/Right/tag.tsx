@@ -16,7 +16,7 @@ const tag = ({ mouseX }: Props) => {
   // console.log(mouseX);
 
   return (
-    <div>
+    <div className="h-screen">
       <motion.div
         style={{ opacity }}
         transition={{

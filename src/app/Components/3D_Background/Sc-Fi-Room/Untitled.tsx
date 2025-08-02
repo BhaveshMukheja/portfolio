@@ -177,6 +177,7 @@ export function Model(props: Props) {
     ProjectData[projectType as ProjectType][projectHoveredKey].image;
 
   const textureCache = useRef<Map<string, Texture>>(new Map());
+  const bgImage = "/assets/wall3.jpg"
 
   const texture = useMemo(() => {
     if (!screenImage) return null;
@@ -190,7 +191,8 @@ export function Model(props: Props) {
     }
   }, [screenImage]);
 
-  // const texture = useTexture(screenImage)
+  const bgTexture = useTexture(bgImage)
+
 
   // Disable blur on texture
   useMemo(() => {
@@ -206,10 +208,10 @@ export function Model(props: Props) {
   ) as unknown as GLTFResult;
 
   // const { positionX, positionY, positionZ, rotationX, rotationY, rotationZ, scale } = useControls({
-  //   positionX: { value: 5.1, min: -20, max: 20, step: 0.1 },
-  //   positionY: { value: -3.4, min: -100, max: 20, step: 0.1 },
-  //   positionZ: { value: 17.2, min: -20, max: 100, step: 0.1 },
-  //   rotationX: { value: 1.5, min: -Math.PI, max: Math.PI, step: 0.1 },
+  //   positionX: { value: 1.9, min: -20, max: 20, step: 0.1 },
+  //   positionY: { value: -12.4, min: -100, max: 20, step: 0.1 },
+  //   positionZ: { value: 28.9, min: -20, max: 100, step: 0.1 },
+  //   rotationX: { value: 0, min: -Math.PI, max: Math.PI, step: 0.1 },
   //   rotationY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.1 },
   //   rotationZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.1 },
   //   scale: { value: 1, min: 0.1, max: 5, step: 0.1 }
@@ -712,10 +714,10 @@ export function Model(props: Props) {
         </group>
         <group position={[0.133, 9.566, 0]} scale={[0.901, 0.901, 1]}>
           {/*Background */}
-          {/* <mesh geometry={nodes.Object_13.geometry} material={materials.material} position={[-0.148, -10.616, 0]} scale={[1.11, 1.11, 1]} >
-          <meshBasicMaterial  map={bgTexture} toneMapped={false}  />
+          <mesh geometry={nodes.Object_13.geometry} material={materials.material} position={[-3.148, 22.616, 0]} scale={[1.11, -1.11, 1]} >
+          <meshBasicMaterial  map={bgTexture} toneMapped={false}   />
 
-            </mesh> */}
+            </mesh>
         </group>
         <group position={[8.129, 7.843, 10.988]}>
           <mesh

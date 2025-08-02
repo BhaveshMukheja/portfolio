@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
-import { BiLogoGmail, BiMessageRounded } from "react-icons/bi";
+import { BiMessageRounded } from "react-icons/bi";
 import {
-  FaHome,
-  FaSearch,
-  FaPlusSquare,
   FaHeart,
-  FaUserCircle,
   FaRegHeart,
   FaRegBookmark,
   FaGithub,
+  FaEnvelope
 } from "react-icons/fa";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { FiSend } from "react-icons/fi";
@@ -42,7 +39,7 @@ const SocialIconsCard = () => {
         href="mailto:bhavesh.bm.3000@gmail.com"
         className="group w-[42px] h-[42px] rounded-full flex items-center justify-center transition duration-300 hover:bg-[#f2a60c] active:scale-90"
       >
-        <BiLogoGmail className="w-5 h-5 group-hover:animate-slidein" />
+        <FaEnvelope className="w-5 h-5 group-hover:animate-slidein" />
       </a>
 
       <a
@@ -87,7 +84,7 @@ const IPhoneInstagramUI: React.FC = () => {
                 <div className="flex items-center px-2 py-2">
                   <img
                     className="w-8 h-8 rounded-full object-cover"
-                    src="assets/bhavesh2.jpg"
+                    src="assets/yoyo5.jpg"
                     alt="Rounded avatar"
                   ></img>
                   <span className="font-semibold text-sm ml-3">
@@ -102,7 +99,7 @@ const IPhoneInstagramUI: React.FC = () => {
               <div className="w-full h-72 bg-gray-300">
                 <img
                   className="w-full h-full object-cover"
-                  src="assets/bhavesh2.jpg"
+                  src="assets/insta.jpeg"
                   alt="Rounded avatar"
                 ></img>
               </div>

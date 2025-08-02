@@ -13,10 +13,10 @@ const ProjectsSection: React.FC = () => {
         {/* Web Dev Section */}
         <div className="flex space-x-12 w-full">
           <div className="w-px self-stretch bg-gradient-to-tr from-transparent via-neutral-50 to-transparent opacity-25 dark:via-neutral-50"></div>
-          <div className="w-full">
+          <div className="w-full ">
             <span className="flex items-center space-x-4 "><div className="w-10 mb-2 h-4 bg-gradient-to-r from-violet-900 to-indigo-600"></div><div className="text-4xl mb-8 text-white uppercase">Web Dev</div></span>
 
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               {ProjectData.webdev.map((item, index) => (
                 <ProjectCard key={index} id={index} data={item} type="webdev" />
               ))}

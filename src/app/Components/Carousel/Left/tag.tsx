@@ -14,7 +14,7 @@ const tag = ({ mouseX }: Props) => {
   const opacity = useTransform(mouseX, [width / 4, width / 2], [0, 1]);
 
   return (
-    <div>
+    <div className="h-screen">
       <motion.div
         style={{ opacity }}
         transition={{
