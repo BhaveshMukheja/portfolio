@@ -36,7 +36,7 @@ const ProjectCard: React.FC<CompetitonsCardProps> = ({ data }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className={`absolute text-xl font-semibold text-white text-center p-2 font-rob`}
+                  className={`absolute text-xl font-semibold text-white text-center p-2 `}
                 >
                   {data.title}
                 </motion.div>

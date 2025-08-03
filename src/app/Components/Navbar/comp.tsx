@@ -72,7 +72,7 @@ export default function Navbar() {
       case "publications":
         return "/publications";
       case "resume":
-        return "/coming_soon?tab=resume";
+        return "assets/Bhavesh_CV_2025.pdf";
       case "about me":
         return "/coming_soon?tab=about";
       case "blog":
@@ -119,6 +119,7 @@ export default function Navbar() {
                     isActive ? "text-yellow-400" : navStyle.textColor
                   }`}
                   onClick={() => setIsOpen(false)}
+                  target="_blank" rel="noopener noreferrer"
                 >
                   {item}
                 </Link>
@@ -156,7 +157,7 @@ export default function Navbar() {
                 }`}
                 onClick={() => setIsOpen(false)}
               >
-                <Link href={getLinkHref(item)}>{item}</Link>
+                <Link href={getLinkHref(item)} target="_blank" rel="noopener noreferrer">{item}</Link>
               </motion.li>
             ))}
           </motion.ul>

@@ -22,12 +22,12 @@ const tag = ({ mouseX }: Props) => {
           delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-        className=" absolute top-[35%] left-[10%]"
+        className=" absolute top-[35%] left-[10%] text-center"
       >
-       <p className="text-5xl font-rob "> ML Engineer </p>
+       <p className="text-5xl font-rob "> AI Researcher </p>
         <p className="text-lg mt-5 text-gray-400">
-          Expertise in making Custom data
-          <br /> sets and training of the model
+          Exploring intelligence through 
+          <br/>data, models, and the cosmos
         </p>
       </motion.div>
     </div>

@@ -28,13 +28,21 @@ const Terminal: React.FC = () => {
             Thanks for visiting my{" "}
             <p className="text-cyan-400 uppercase ml-2">portfolio</p>
           </div>
+
+                <div className="text-white inline-flex">
+          I will be more than happy to hear your reviews or suggestions
+       
+          </div>
+          
+
           <span className="text-white inline-flex">
             You can find my{" "}
             <p className="text-fuchsia-400 mx-2">social media</p> links at the
-            bottom of the phone
+            bottom of the phone. <p className="text-red-400 mx-2">See ya!</p>
           </span>
-          <div className="text-white inline-flex">
-            Type <p className="text-green-500 mx-2"> 'help' </p>to know the
+
+          <div className="text-white inline-flex mt-6">
+            Type <p className="text-green-500 mx-2 "> 'help' </p>to know the
             commands available
           </div>
         </div>
@@ -48,15 +56,14 @@ const Terminal: React.FC = () => {
   const terminalBodyRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom when history updates
-useEffect(() => {
-  if (terminalBodyRef.current) {
-    terminalBodyRef.current.scrollTo({
-      top: terminalBodyRef.current.scrollHeight,
-      behavior: "smooth"
-    });
-  }
-}, [history]);
-
+  useEffect(() => {
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTo({
+        top: terminalBodyRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [history]);
 
   const handleCommand = (cmd: string) => {
     if (!cmd.trim()) return;
@@ -73,7 +80,7 @@ useEffect(() => {
       const componentOutput = (
         <div className="p-3 rounded text-gray-300">
           To know more about me, you can click{" "}
-          <a className="text-violet-500" href="/">
+          <a className="text-violet-500" href="/coming_soon?tab=about">
             HERE
           </a>
         </div>
@@ -216,14 +223,14 @@ useEffect(() => {
           <p className="text-fuchsia-400"> Here are some facts about me:</p>
           <ul className="text-white">
             <li className="flex ">
-              <FaDev className="mt-1 mr-1" /> Web Developer
+              <FaDev className="mt-1 mr-1" /> Full-Stack Developer
             </li>
             <li className="flex ">
-              <GiArtificialHive className="mt-1 mr-1" /> ML Engnieer
+              <GiArtificialHive className="mt-1 mr-1" /> AI Researcher
             </li>
             <li className="flex ">
               <IoPlanet className="mt-1 mr-1" />
-              Astrophysics Researcher
+              Astrophysicist
             </li>
             <li className="flex ">
               <IoIosMusicalNotes className="mt-1 mr-1" />
@@ -270,9 +277,7 @@ useEffect(() => {
     setHistory((prev) => [...prev, { type: "output", content: output }]);
   };
 
-
-
- const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleCommand(input);
       setInput("");
@@ -300,8 +305,7 @@ useEffect(() => {
     }
   };
 
-
- return (
+  return (
     <div className="bg-black p-4 w-full max-w-2xl font-mono rounded-xl shadow-lg mx-auto">
       {/* MacOS-style top bar */}
       <div className="flex space-x-2 mb-2">
@@ -311,7 +315,7 @@ useEffect(() => {
       </div>
 
       {/* Scrollable terminal body */}
-      <div 
+      <div
         ref={terminalBodyRef}
         className="overflow-y-auto h-[500px] mb-4 pr-2 space-y-2"
       >

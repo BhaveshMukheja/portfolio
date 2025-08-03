@@ -33,13 +33,20 @@ const skills = [
   "scikitlearn",
   "chatgpt",
   "sql",
-  "aws"
+  "aws",
+  "git",
+  "github",
+  "docker",
+  "latex",
+  "premierepro",
+  "aftereffects",
+  "photoshop",
 ];
 
 const hoverSkills = [
   {
     id: 1,
-    skills: ["c", "cpp", "javascript", "typescript", "python", "r"],
+    skills: ["c", "cpp", "javascript", "typescript", "python", "r", "sql"],
   },
   {
     id: 2,
@@ -51,12 +58,7 @@ const hoverSkills = [
   },
   {
     id: 4,
-    skills: [
-      "node",
-      "express",
-      "python",
-      "aws"
-    ],
+    skills: ["node", "express", "python", "aws"],
   },
   {
     id: 5,
@@ -64,7 +66,15 @@ const hoverSkills = [
   },
   {
     id: 6,
-    skills: ["r", "tensorflow", "keras", "opencv", "pytorch", "scikitlearn", "chatgpt", ],
+    skills: ["tensorflow", "keras", "opencv", "pytorch", "chatgpt"],
+  },
+  {
+    id: 7,
+    skills: ["docker", "aws", "git", "github"],
+  },
+  {
+    id: 8,
+    skills: ["latex", "premierepro", "aftereffects", "photoshop"],
   },
 ];
 
@@ -137,7 +147,7 @@ function Word({
 }
 
 function Cloud({
-  radius = 40,
+  radius = 45,
   hoveredKey,
 }: {
   radius?: number;
@@ -189,7 +199,7 @@ export default function Comp() {
         <fog attach="fog" args={["#202025", 0, 80]} />
         <ambientLight intensity={20} />
         <Suspense fallback={null}>
-          <Cloud radius={40} hoveredKey={hoveredKey} />
+          <Cloud radius={45} hoveredKey={hoveredKey} />
         </Suspense>
         <TrackballControls noZoom />
       </Canvas>

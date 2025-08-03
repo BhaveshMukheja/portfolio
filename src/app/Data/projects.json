@@ -2,17 +2,17 @@
   "webdev": [
     {
       "title": "Portfolio",
-      "descrip": "That is my friend you are looking at",
+      "descrip": "You are looking at it, my friend!",
       "githubLink": "",
       "demoLink": "#",
       "stack": [
-        "React",
+        "NextJS",
         "Tailwind CSS",
         "Node.js",
-        "Express",
-        "MongoDB",
-        "Prisma",
-        "Material UI"
+        "Framer-motion",
+        "Three.js",
+        "React Three Fiber",
+        "TypeScript"
       ],
       "image": "assets/projects/portfolio.png"
     },
@@ -29,7 +29,8 @@
         "Express",
         "MongoDB",
         "Prisma",
-        "Material UI"
+        "Material UI",
+        "JavaScript"
       ],
       "image": "assets/projects/stock_monitor.png"
     },

@@ -24,13 +24,13 @@ const tag = ({ mouseX }: Props) => {
           ease: "easeOut",
           duration: 0.5,
         }}
-        className="absolute top-[35%] right-[5%]"
+        className="absolute top-[35%] right-[5%] text-center"
       >
-        <p className="text-5xl font-rob">Web Developer</p>
-        <p className="text-lg mt-5 text-gray-500">
-          Front end developer who writes
+        <p className="text-5xl font-rob">Full-Stack Developer</p>
+        <p className="text-lg mt-5 text-gray-500 ">
+          Obsessed with clean code and
           <br />
-          clean, elegant, and efficient code
+          seamless user experiences
         </p>
       </motion.div>
     </div>
