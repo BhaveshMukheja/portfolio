@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Room from "./Sc-Fi-Room/comp";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import { Suspense } from "react";
@@ -12,8 +11,7 @@ import {
   useSpring,
   useMotionValue,
 } from "framer-motion";
-import { GirlRoom } from "./Sc-Fi-Room/girlRoom";
-import { Model } from "./Sc-Fi-Room/Untitled";
+import { Model } from "./Sc-Fi-Room/comp";
 // import { PreloadProjectTextures } from "@/app/Utils/texturePreloader";
 
 

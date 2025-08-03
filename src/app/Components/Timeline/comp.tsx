@@ -12,7 +12,7 @@ import { IoIosSchool } from "react-icons/io";
 import { IoPlanet } from "react-icons/io5";
 import { MdEventAvailable } from "react-icons/md";
 import { FaSchoolFlag } from "react-icons/fa6";
-import "./test.css";
+
 
 const iconMap: Record<string, React.ComponentType> = {
   GiCircuitry,
