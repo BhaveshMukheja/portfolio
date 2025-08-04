@@ -11,7 +11,6 @@ import SkillHoverProvider from "./Context/skillHoverContext";
 import ProjectHoverProvider from "./Context/projectHoverContext";
 import Navbar from "./Components/Navbar/comp";
 
-
 const lexend = Lexend_Tera({
   subsets: ["latin"],
   variable: "--font-lexend",
@@ -67,15 +66,12 @@ export default function RootLayout({
     ${geistMono.variable}
     antialiased `}
       >
-        
-  
-          <SkillHoverProvider>
-            <ProjectHoverProvider>
-              <Navbar />
-              {children}
-            </ProjectHoverProvider>
-          </SkillHoverProvider>
-
+        <SkillHoverProvider>
+          <ProjectHoverProvider>
+            <Navbar />
+            {children}
+          </ProjectHoverProvider>
+        </SkillHoverProvider>
       </body>
     </html>
   );

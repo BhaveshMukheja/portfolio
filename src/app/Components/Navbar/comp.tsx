@@ -2,13 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 // import logoBg from "../../../../public/assets/logo.png";
 
-const navItems = ["Home", "Resume", "Publications", "About Me", "Contact", "Blog"];
+const navItems = [
+  "Home",
+  "Resume",
+  "Publications",
+  "About Me",
+  "Contact",
+  "Blog",
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +34,7 @@ export default function Navbar() {
     background: "bg-black",
     textColor: "text-white",
   });
-  const [logoStyle, setLogostyle] = useState('/assets/logo.png')
+  const [logoStyle, setLogostyle] = useState("/assets/logo.png");
 
   const { scrollY } = useScroll();
 
@@ -31,13 +43,13 @@ export default function Navbar() {
 
     if (latest < sectionHeight) {
       setNavStyle({ background: "bg-black", textColor: "text-white" });
-      setLogostyle('/assets/logo.png')
+      setLogostyle("/assets/logo.png");
     } else if (latest >= sectionHeight && latest < 6 * sectionHeight) {
       setNavStyle({ background: "bg-transparent", textColor: "text-black" });
       // setLogostyle('/assets/logo-white.png')
     } else {
       setNavStyle({ background: "bg-transparent", textColor: "text-white" });
-      setLogostyle('/assets/logo.png')
+      setLogostyle("/assets/logo.png");
     }
   });
 
@@ -101,7 +113,9 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-10 relative transition-colors duration-300 ${navStyle.textColor}`}>
+        <ul
+          className={`hidden md:flex space-x-10 relative transition-colors duration-300 ${navStyle.textColor}`}
+        >
           {navItems.map((item) => {
             const isActive = active === item;
             const isHovered = hovered === item;
@@ -118,8 +132,10 @@ export default function Navbar() {
                   className={`transition-colors duration-300 ${
                     isActive ? "text-yellow-400" : navStyle.textColor
                   }`}
+                  {...(item.toLowerCase() !== "contact"
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   onClick={() => setIsOpen(false)}
-                  target="_blank" rel="noopener noreferrer"
                 >
                   {item}
                 </Link>
@@ -157,7 +173,14 @@ export default function Navbar() {
                 }`}
                 onClick={() => setIsOpen(false)}
               >
-                <Link href={getLinkHref(item)} target="_blank" rel="noopener noreferrer">{item}</Link>
+                <Link
+                  href={getLinkHref(item)}
+                  {...(item.toLowerCase() !== "contact"
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {item}
+                </Link>
               </motion.li>
             ))}
           </motion.ul>
