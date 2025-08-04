@@ -12,7 +12,7 @@ export default function Footer() {
         <div>
           <h2 className="text-xl font-semibold">Bhavesh Mukheja</h2>
           <p className="mt-3 text-sm text-gray-400">
-            I am an AI Researcher and Web Developer, and forever Physicist and musicsian. I aim for bridging the gap between Physics and CS. Want to know about me, dig in!
+            I am an AI Researcher and Web Developer, and forever Physicist and musicsian. I aim for bridging the gap between Physics and CS.
           </p>
         </div>
 
@@ -62,6 +62,9 @@ export default function Footer() {
                 </li>
                    <li>
                   <a href="https://sketchfab.com/3d-models/lo-fi-study-girlroom-cd5c5ec1107e42558f692b316462ccfb" target="_blank" rel="noopener noreferrer" className='hover:underline'>3D model by <span className=' font-semibold'>雨花Rain flower</span></a>
+                </li>
+                   <li>
+                  <a href="https://www.freepik.com/" target="_blank" rel="noopener noreferrer" className='hover:underline'>Wallpaper used in 3D model by <span className=' font-semibold'>Freepik</span></a>
                 </li>
               </ul>
             </li>

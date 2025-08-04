@@ -12,11 +12,14 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { Model } from "./Sc-Fi-Room/comp";
-// import { PreloadProjectTextures } from "@/app/Utils/texturePreloader";
+
 
 
 const AnimatedRoom = () => {
   const { scrollYProgress } = useScroll();
+
+
+
 
   // Interpolations based on scroll position (tweak these as needed)
   // Base transforms
