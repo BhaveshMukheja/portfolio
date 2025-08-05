@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import FuzzyText from '../FuzzyText/comp';
+import FuzzyText from '../Texts/FuzzyText/comp';
 
 const Loader = () => {
   const [progress, setProgress] = useState(0);

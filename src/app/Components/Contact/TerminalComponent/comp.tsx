@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Ensures this component only renders on the client side (Next.js)
 
 import Image from "next/image";
 import React, { useState, useRef, useEffect, KeyboardEvent } from "react";
@@ -8,33 +8,33 @@ import { GiArtificialHive } from "react-icons/gi";
 import { IoIosMusicalNotes } from "react-icons/io";
 import { IoMusicalNote, IoPlanet } from "react-icons/io5";
 
+// Define the type for terminal entries
 type TerminalEntry =
   | { type: "command"; content: string }
   | { type: "output"; content: string }
   | { type: "component"; content: React.ReactNode };
 
+// Placeholder command map (expandable for simpler outputs)
 const commandMap: Record<string, string> = {
-  // about: 'To check more about me you can click here: ',
+  // e.g., about: 'This is a CLI portfolio',
 };
 
+// Terminal component
 const Terminal: React.FC = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(""); // Input field value
   const [history, setHistory] = useState<TerminalEntry[]>([
     {
       type: "component",
       content: (
         <div>
+          {/* Welcome Message */}
           <div className="text-white inline-flex">
             Thanks for visiting my{" "}
             <p className="text-cyan-400 uppercase ml-2">portfolio</p>
           </div>
-
-                <div className="text-white inline-flex">
-          I will be more than happy to hear your reviews or suggestions
-       
+          <div className="text-white inline-flex">
+            I will be more than happy to hear your reviews or suggestions
           </div>
-          
-
           <span className="text-white inline-flex">
             You can find my{" "}
             <p className="text-fuchsia-400 mx-2">social media</p> links at the
@@ -42,20 +42,21 @@ const Terminal: React.FC = () => {
           </span>
 
           <div className="text-white inline-flex mt-6">
-            Type <p className="text-green-500 mx-2 "> 'help' </p>to know the
+            Type <p className="text-green-500 mx-2 ">'help'</p> to know the
             commands available
           </div>
         </div>
       ),
     },
   ]);
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
-  const [historyIndex, setHistoryIndex] = useState<number | null>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
-  const terminalBodyRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom when history updates
+  const [commandHistory, setCommandHistory] = useState<string[]>([]); // Stores previous commands
+  const [historyIndex, setHistoryIndex] = useState<number | null>(null); // For arrow key navigation
+  const inputRef = useRef<HTMLInputElement>(null); // Reference to the input field
+  const bottomRef = useRef<HTMLDivElement>(null); // To auto-scroll to latest entry
+  const terminalBodyRef = useRef<HTMLDivElement>(null); // Scrollable terminal body
+
+  // Scrolls terminal to bottom when history changes
   useEffect(() => {
     if (terminalBodyRef.current) {
       terminalBodyRef.current.scrollTo({
@@ -65,17 +66,21 @@ const Terminal: React.FC = () => {
     }
   }, [history]);
 
+  // Executes the logic for each command typed
   const handleCommand = (cmd: string) => {
     if (!cmd.trim()) return;
 
+    // Save command to history
     setCommandHistory((prev) => [...prev, cmd]);
     setHistory((prev) => [...prev, { type: "command", content: `$ ${cmd}` }]);
 
+    // Command: clear terminal
     if (cmd === "clear") {
       setHistory([]);
       return;
     }
 
+    // Command: about me
     if (cmd === "about me") {
       const componentOutput = (
         <div className="p-3 rounded text-gray-300">
@@ -85,13 +90,11 @@ const Terminal: React.FC = () => {
           </a>
         </div>
       );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
+      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
       return;
     }
 
+    // Command: help
     if (cmd === "help") {
       const componentOutput = (
         <div className="p-3 rounded">
@@ -110,173 +113,67 @@ const Terminal: React.FC = () => {
           </ul>
         </div>
       );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
+      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
       return;
     }
 
-    if (cmd === "npm install") {
+    // Meme/GIF responses
+    const gifCommands: Record<string, string> = {
+      "npm install": "https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif",
+      "git push": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2g2NTZhajRmbWpnazBkb3VsNWtqbHczcm1hemJyZ3N5aWU4em14ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UCprfrXABmEKG1a8SE/giphy.gif",
+      "git add": "https://media1.tenor.com/m/c4YEuiMQfBAAAAAd/ryan-howard-bj-novak.gif",
+      "my dream": "https://media1.tenor.com/m/BEsL9FFFGN4AAAAd/the-office-michael-scott.gif",
+      "kill": "https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif"
+    };
+
+    if (gifCommands[cmd]) {
       const componentOutput = (
         <div className="p-3 rounded mt-2 text-white">
-          Oh! You want to install the packages? Here you GO!
           <Image
             unoptimized
-            src="https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif"
+            src={gifCommands[cmd]}
             className="object-cover w-full h-[300px]"
-            width={"50"}
-            height={"100"}
-            alt="kya hua"
+            width={50}
+            height={100}
+            alt="command gif"
           />
         </div>
       );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
+      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
       return;
     }
 
-    if (cmd === "git push") {
-      const componentOutput = (
-        <div className="p-3 rounded mt-2 text-white font-bold">
-          I AM TRYING!
-          <Image
-            src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2g2NTZhajRmbWpnazBkb3VsNWtqbHczcm1hemJyZ3N5aWU4em14ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UCprfrXABmEKG1a8SE/giphy.gif"
-            className="object-cover w-full h-[300px]"
-            width={"50"}
-            height={"100"}
-            alt="kya hua"
-          />
-        </div>
-      );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
-      return;
-    }
-
-    if (cmd === "git add") {
-      const componentOutput = (
-        <div className="p-3 rounded mt-2 text-white">
-          Done!
-          <Image
-            src="https://media1.tenor.com/m/c4YEuiMQfBAAAAAd/ryan-howard-bj-novak.gif"
-            className="object-cover w-full h-[400px]"
-            width={"50"}
-            height={"100"}
-            alt="kya hua"
-          />
-        </div>
-      );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
-      return;
-    }
-
-    if (cmd === "my dream") {
-      const componentOutput = (
-        <div className="p-3 rounded mt-2 text-white">
-          <Image
-            src="https://media1.tenor.com/m/BEsL9FFFGN4AAAAd/the-office-michael-scott.gif"
-            className="object-cover w-full h-[400px]"
-            width={"50"}
-            height={"100"}
-            alt="kya hua"
-          />
-        </div>
-      );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
-      return;
-    }
-
-    if (cmd === "kill") {
-      const componentOutput = (
-        <div className="p-3 rounded mt-2 text-white">
-          Ha! Got you first!
-          <Image
-            src="https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif"
-            className="object-cover w-full h-[400px]"
-            width={"50"}
-            height={"100"}
-            alt="kya hua"
-          />
-        </div>
-      );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
-      return;
-    }
-
+    // Command: facts
     if (cmd === "facts") {
       const componentOutput = (
         <div className="p-3 rounded mt-2">
           <p className="text-fuchsia-400"> Here are some facts about me:</p>
           <ul className="text-white">
-            <li className="flex ">
-              <FaDev className="mt-1 mr-1" /> Full-Stack Developer
-            </li>
-            <li className="flex ">
-              <GiArtificialHive className="mt-1 mr-1" /> AI Researcher
-            </li>
-            <li className="flex ">
-              <IoPlanet className="mt-1 mr-1" />
-              Astrophysicist
-            </li>
-            <li className="flex ">
-              <IoIosMusicalNotes className="mt-1 mr-1" />
-              Muscisian
-            </li>
-            <li className="flex ">
-              {" "}
-              <FaBook className="mt-1 mr-1" />
-              Nerd for The Office
-            </li>
+            <li className="flex"><FaDev className="mt-1 mr-1" /> Full-Stack Developer</li>
+            <li className="flex"><GiArtificialHive className="mt-1 mr-1" /> AI Researcher</li>
+            <li className="flex"><IoPlanet className="mt-1 mr-1" /> Astrophysicist</li>
+            <li className="flex"><IoIosMusicalNotes className="mt-1 mr-1" /> Musician</li>
+            <li className="flex"><FaBook className="mt-1 mr-1" /> Nerd for The Office</li>
           </ul>
         </div>
       );
-      setHistory((prev) => [
-        ...prev,
-        { type: "component", content: componentOutput },
-      ]);
+      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
       return;
     }
 
+    // Command: hello
     if (cmd === "hello") {
       const commandOutput = "Hello!";
-      setHistory((prev) => [
-        ...prev,
-        { type: "output", content: commandOutput },
-      ]);
+      setHistory((prev) => [...prev, { type: "output", content: commandOutput }]);
       return;
     }
 
-    if (cmd === "hello") {
-      const commandOutput = "Hello!";
-      setHistory((prev) => [
-        ...prev,
-        { type: "output", content: commandOutput },
-      ]);
-      return;
-    }
-
-    const output =
-      cmd in commandMap
-        ? commandMap[cmd as keyof typeof commandMap]
-        : `Command not found: ${cmd}`;
-
+    // Fallback: unknown command
+    const output = commandMap[cmd] ?? `Command not found: ${cmd}`;
     setHistory((prev) => [...prev, { type: "output", content: output }]);
   };
 
+  // Keyboard handling for terminal input
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleCommand(input);
@@ -305,16 +202,18 @@ const Terminal: React.FC = () => {
     }
   };
 
+  // Terminal UI rendering
   return (
     <div className="bg-black p-4 w-full max-w-2xl font-mono rounded-xl shadow-lg mx-auto">
-      {/* MacOS-style top bar */}
+      
+      {/* Top bar (Mac style) */}
       <div className="flex space-x-2 mb-2">
         <div className="w-3 h-3 rounded-full bg-red-500" />
         <div className="w-3 h-3 rounded-full bg-yellow-500" />
         <div className="w-3 h-3 rounded-full bg-green-500" />
       </div>
 
-      {/* Scrollable terminal body */}
+      {/* Terminal history display */}
       <div
         ref={terminalBodyRef}
         className="overflow-y-auto h-[500px] mb-4 pr-2 space-y-2"
@@ -333,11 +232,10 @@ const Terminal: React.FC = () => {
             </div>
           )
         )}
-        {/* Invisible anchor for scroll-to-bottom */}
         <div ref={bottomRef} />
       </div>
 
-      {/* Input line */}
+      {/* Terminal input prompt */}
       <div className="flex items-center">
         <span className="text-cyan-400">
           $

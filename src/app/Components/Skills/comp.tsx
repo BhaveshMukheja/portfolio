@@ -1,5 +1,5 @@
 import React from "react";
-import SkillSphere from "./SkillSphere/comp";
+import SkillSphere from "../3D_Models/SkillSphere/comp";
 import SkillBox from "./SkillBox/comp";
 
 const comp = () => {

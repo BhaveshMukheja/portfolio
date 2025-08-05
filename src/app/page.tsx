@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Carousel from "./Components/Carousel/comp";
+import Carousel from "./Components/Hero/comp";
 import Skill from "./Components/Skills/comp";
 import Timeline from "./Components/Timeline/comp";
 import Projects from "./Components/Projects/comp";
 import Competions from "./Components/Competitions/comp";
-import AboutMe from "./Components/AboutMe/comp";
-import SciFiRoom from "./Components/3D_Background/comp";
+import AboutMe from "./Components/Contact/comp";
+import SciFiRoom from "./Components/3D_Models/LoFiGirlRoom/comp";
 import Footer from "./Components/Footer/comp";
 import SeoHead from "./Components/SeoHead/comp";
 import Loader from "./Components/Loader/comp";
