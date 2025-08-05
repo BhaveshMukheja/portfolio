@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   FaInstagram,
@@ -9,7 +7,6 @@ import {
 } from "react-icons/fa6";
 import SeoHead from "../Components/SeoHead/comp";
 
-// Reuse classes
 const iconWrapperClasses =
   "relative w-10 h-10 rounded-full transition-all duration-500 border-2 border-transparent hover:border-white flex items-center justify-center overflow-hidden group";
 const iconInnerClasses =
@@ -40,26 +37,24 @@ const icons = [
 
 function SocialIcons() {
   return (
-    <>
-      <ul className="flex gap-4">
-        {icons.map(({ Icon, bg, href }, index) => (
-          <li key={index} className="list-none">
-            <a href={href} className={iconWrapperClasses} target="blank">
-              <span
-                className={`absolute top-full left-0 w-full h-full ${bg} transition-all duration-500 ease-in-out group-hover:top-0 z-0`}
-              />
-              <span className={iconInnerClasses}>
-                <Icon />
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul className="flex gap-4">
+      {icons.map(({ Icon, bg, href }, index) => (
+        <li key={index} className="list-none">
+          <a href={href} className={iconWrapperClasses} target="_blank" rel="noopener noreferrer">
+            <span
+              className={`absolute top-full left-0 w-full h-full ${bg} transition-all duration-500 ease-in-out group-hover:top-0 z-0`}
+            />
+            <span className={iconInnerClasses}>
+              <Icon />
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-const Page = () => {
+export default function Page() {
   return (
     <>
       <SeoHead
@@ -69,7 +64,6 @@ const Page = () => {
         image="public/assets/projects/portfolio.png"
       />
       <main>
-      <div>
         <div className="absolute top-0 w-screen h-screen bg-[url('/assets/picture.jpg')] bg-cover bg-center">
           {/* Overlay */}
           <div className="absolute inset-0 bg-gray-200/30 z-10" />
@@ -92,10 +86,7 @@ const Page = () => {
             <SocialIcons />
           </div>
         </div>
-      </div>
       </main>
     </>
   );
-};
-
-export default Page;
+}

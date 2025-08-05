@@ -68,11 +68,10 @@
       "stack": ["React", "Framer-motion", "JavaScript", "Tailwind CSS"],
       "image": "assets/projects/streamverse.png"
     }
-    
   ],
 
   "MLnResearch": [
-{
+    {
       "title": "Image Caption Generator",
       "descrip": "NLP Based Image Caption Generator",
       "githubLink": "https://github.com/BhaveshMukheja/image-caption-generator",
@@ -85,7 +84,7 @@
       "descrip": "Indian Institute of Technology Kharagpur, Prof. Pintu Patra",
       "githubLink": "",
       "demoLink": "https://drive.google.com/file/d/1ZVoZzORLrV7Z2qvXLZAaMzughMHnZOdk/view?usp=sharing",
-      "stack":[],
+      "stack": [],
       "image": "assets/projects/cmp.png"
     },
     {
@@ -106,7 +105,7 @@
     }
   ],
 
-  "blackScreen":[
+  "blackScreen": [
     {
       "image": "assets/projects/blackScreen.png"
     }

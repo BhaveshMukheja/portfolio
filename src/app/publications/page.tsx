@@ -1,9 +1,6 @@
-"use client";
-
 import React from "react";
 import { LiaOrcid } from "react-icons/lia";
 import { FaGoogleScholar } from "react-icons/fa6";
-import Navbar from "../Components/Navbar/comp";
 import SeoHead from "../Components/SeoHead/comp";
 
 const icons = [
@@ -16,12 +13,12 @@ const icons = [
   {
     Icon: FaGoogleScholar,
     bg: "#4D90FE",
-    href: "https://scholar.google.com", // Use correct link here
+    href: "https://scholar.google.com", // Update if you have your personal profile link
     title: "Google Scholar",
   },
 ];
 
-const Publications = () => {
+export default function Publications() {
   return (
     <>
       <SeoHead
@@ -37,7 +34,7 @@ const Publications = () => {
 
           {/* Main Card */}
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[50%] h-[80%] bg-white/90 z-20 rounded-xl border-2 p-6 md:p-12 flex flex-col justify-between shadow-xl">
-            <h1 className="font-tang text-4xl md:text-6xl font-bold text-center ">
+            <h1 className="font-tang text-4xl md:text-6xl font-bold text-center">
               Publications
             </h1>
 
@@ -88,21 +85,23 @@ const Publications = () => {
               </div>
             </div>
 
-            {/* Social Buttons */}
+            {/* Social Links */}
             <ul className="flex justify-center gap-4 mt-8">
               {icons.map(({ Icon, bg, href, title }, index) => (
                 <li key={index}>
-                  <button
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="fancy-button inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 font-semibold transition-all duration-300"
                     style={
                       {
                         "--btn-hover-bg": bg,
                       } as React.CSSProperties
                     }
-                    onClick={() => window.open(href, "_blank")}
                   >
                     {title} <Icon className="text-xl" />
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -111,6 +110,4 @@ const Publications = () => {
       </main>
     </>
   );
-};
-
-export default Publications;
+}

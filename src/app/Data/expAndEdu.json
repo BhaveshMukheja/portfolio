@@ -2,62 +2,61 @@
   {
     "logo": "assets/experience/addverb.png",
     "logo-white": "assets/experience/addverb2.png",
-     "title":"Addverb Technologies, Nodia",
+    "title": "Addverb Technologies, Nodia",
     "role": "Incoming Gradutate Engnieer Trainee",
     "time": "Aug'25 - ",
     "descrip": "Yet to contribute",
     "icon": "GiCircuitry",
-    "icon-color":"#EC2F23"
-
+    "icon-color": "#EC2F23"
   },
   {
     "logo": "assets/experience/arogo.png",
     "logo-white": "assets/experience/arogo2.png",
-     "title":"Arogo AI",
+    "title": "Arogo AI",
     "role": "Led Developer Intern",
     "time": "Jun'25 - Present",
     "descrip": "Built core features for AI-powered doctor-SaaS platform focused on predictive healthcare and clinical workflow automation",
-    "icon":"RiMentalHealthFill",
-    "icon-color":"#4F0DD3"
+    "icon": "RiMentalHealthFill",
+    "icon-color": "#4F0DD3"
   },
   {
     "logo": "assets/experience/kgp.png",
     "logo-white": "assets/experience/kgp2.png",
-     "title":"Indian Institute of Technology, Kharagpur",
+    "title": "Indian Institute of Technology, Kharagpur",
     "role": "B.S. (Honors) Physics",
     "time": "2021-2025",
     "descrip": "Error 404: Couldn't find a one liner for 4-years spent here.",
-    "icon":"IoIosSchool",
-    "icon-color":"#33247B"
+    "icon": "IoIosSchool",
+    "icon-color": "#33247B"
   },
   {
     "logo": "assets/experience/iia.png",
     "logo-white": "assets/experience/iia.png",
-     "title":"Indian Institute of Astrophysics, Bangalore",
+    "title": "Indian Institute of Astrophysics, Bangalore",
     "role": "Research Fellow",
     "time": "Dec'23-Present",
     "descrip": "Automated Galaxy Merger Detections using Deep Learning Algorithm and Image Processing. Got to collaborate with wonderful people accorss country and world, and got a change to use Param Shakti (IIT KGP's HPC)",
-    "icon":"IoPlanet",
-    "icon-color":"#9ACCFD"
+    "icon": "IoPlanet",
+    "icon-color": "#9ACCFD"
   },
   {
     "logo": "",
     "logo-white": "",
-    "title":"Jif.ai",
+    "title": "Jif.ai",
     "role": "Fullstack Developer Intern",
     "time": "Mar'24-May'24",
     "descrip": "Developed a platform enabling users to generate and customize event sites with GenAI prompts and manual customization",
-    "icon":"MdEventAvailable",
-    "icon-color":"#86efac"
+    "icon": "MdEventAvailable",
+    "icon-color": "#86efac"
   },
   {
     "logo": "assets/experience/sdps.png",
     "logo-white": "assets/experience/sdps.png",
-     "title":"S.D. Public School, Muzaffarnagar",
+    "title": "S.D. Public School, Muzaffarnagar",
     "role": "Student",
     "time": "2007-2021",
     "descrip": "The First Steps. Completed my schooling under the CBSE curriculum, achieving 97.4% in Class X and 97.8% in Class XII.",
-    "icon":"FaSchoolFlag",
-    "icon-color":"#EC9B12"
+    "icon": "FaSchoolFlag",
+    "icon-color": "#EC9B12"
   }
 ]
