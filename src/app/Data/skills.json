@@ -1,40 +1,50 @@
 [
-     {
-        "title": "Programming Languages",
-        "skills": "C, C++, JavaScript, Typescript, Python, R",
-        "logo":"cpp",
-        "id":1
-        
-    },
-    {
-        "title": "Web Design & Development",
-        "skills": "HTML, CSS, Tailwind CSS, JavaScript, Typescript",
-        "logo":"html",
-        "id":2
-    },
-    {
-        "title": "Frontend Javascript Frameworks",
-        "skills": "React, Next, Vite",
-        "logo":"react",
-        "id":3
-    },
-    {
-        "title": "Backend Frameworks",
-        "skills": "Node.js, Express.js, Python",
-        "logo":"node",
-        "id":4
-    },
-    {
-        "title": "Database Management System",
-        "skills": "MonogoDB, Mongoose, Prisma ORM, Postgres",
-        "logo":"mongo",
-        "id":5
-    },
-    {
-        "title": "Data Processing and Machine Learning",
-        "skills": "R, scikit-learn, PyTorch, Tensorflow, Keras, OpenCV",
-        "logo":"tensorflow",
-        "id":6
-    }
-    
+  {
+    "title": "Programming Languages",
+    "skills": "C, C++, JavaScript, Typescript, Python, R, SQL",
+    "logo": "cpp",
+    "id": 1
+  },
+  {
+    "title": "Web Design & Development",
+    "skills": "HTML, CSS, Tailwind CSS, JavaScript, Typescript",
+    "logo": "html",
+    "id": 2
+  },
+  {
+    "title": "Frontend Javascript Frameworks",
+    "skills": "React, Next, Vite",
+    "logo": "react",
+    "id": 3
+  },
+  {
+    "title": "Backend Frameworks",
+    "skills": "Node.js, Express.js, Python",
+    "logo": "node",
+    "id": 4
+  },
+  {
+    "title": "Database Management System",
+    "skills": "MonogoDB, Mongoose, Prisma ORM, Postgres",
+    "logo": "mongo",
+    "id": 5
+  },
+  {
+    "title": "Artificial Intelligence & Machine Learning",
+    "skills": "PyTorch, Tensorflow, Keras, OpenCV, OpenAI, LangChain, Hugging Face, YOLO",
+    "logo": "tensorflow",
+    "id": 6
+  },
+  {
+    "title": "DevOps & Version Control",
+    "skills": "Docker, AWS, Google Cloud, Git, GitHub",
+    "logo": "docker",
+    "id": 7
+  },
+  {
+    "title": "Miscellaneous",
+    "skills": "Latex, Laavan, SmartPLS, Adobe Premiere Pro, Adobe After Effects, Adobe Photoshop",
+    "logo": "latex",
+    "id": 8
+  }
 ]

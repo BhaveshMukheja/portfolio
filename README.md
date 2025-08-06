@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio – Bhavesh Mukheja
 
-## Getting Started
+Welcome to my personal portfolio website! This is a fully performant, and modern web app built using [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/) and [Framer Motion](https://www.framer.com/motion/) with 3D experiences powered by [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/introduction). It showcases my skills, projects, experience, and research in an interactive and aesthetic way.
 
-First, run the development server:
+If you want to know me in short then - I am an AI Researcher and Web Developer, and forever Physicist and musician. I aim to bridge the gap between Physics and CS.
 
+## Features
+
+- Smooth animations with Framer Motion
+- Interactive 3D elements with React Three Fiber (Like the 3D sphere. You can rotate it as you wish using mouse or touch)
+- EO-optimized and fast-loading (Lighthouse score 90+)
+- Modular and scalable codebase
+- Resume and Contact section included
+- Project carousel with rich media
+- Global loading logic using React Context
+- Custom loader until all animations and Dashboard isn't ready
+- Fun interactive elements like Terminal Component (Try it if you haven't yet)
+
+---
+
+## Tech Stack
+
+| Category         | Tech Used                                 |
+|------------------|-------------------------------------------|
+| Frontend         | Next.js, React, TypeScript                |
+| Animations       | Framer Motion                             |
+| 3D Rendering     | React Three Fiber, Drei, GLSL shaders     |
+| Styling          | Tailwind CSS, CSS Modules                 |
+| State Management | React Context API                         |
+| Icons & UI       | React Icons                               |
+| SEO              | Next Head, Sitemap, Robots.txt, OG tags   |
+
+---
+
+## Project Structure
+
+<pre> <code>```bash ├── public/ # Static assets (images, fonts, icons) ├── components/ # Reusable UI components ├── sections/ # Different sections of the site ├── three/ # React Three Fiber 3D components ├── hooks/ # Custom React hooks ├── context/ # Global providers like loading context ├── styles/ # Tailwind config, globals ├── pages/ # Next.js routing pages ├── utils/ # Utility functions └── README.md # You are here :) ```</code> </pre>
+
+## Local Development
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+```
+
+### 2. Install Dependencies 
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Start the Dev Server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs locally at: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License 
+This project is open-source for inspiration and learning purposes. You may not directly replicate and use this as your own without proper credit.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Future Imporvements
+- Make the site mobile responsive
+- Add About Me Page
+- Add Blog Page
+- Add Interests and Hobbies Page
 
-To learn more about Next.js, take a look at the following resources:
+## Inspirations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [BryanSmith](https://multikitty-portfolio.onrender.com/)
+- [Anzhelika](https://a-coderr.github.io/portfolio-website/#home)
+- [Ashleigh](https://a-coderr.github.io/portfolio-website/#home)
+- [Adham](https://www.adhamdannaway.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+I'm always open to exciting opportunities, feedback, or even a quick hello.Feel free to connect with me via:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Portfolio: yourdomain.com
+- Email: bhavesh.bm.3000@gmail.com
+- LinkedIn: https://www.linkedin.com/in/bhavesh-mukheja-1925b2239/
+- Instagram: https://www.instagram.com/bhavesh_mukheja/

@@ -2,19 +2,19 @@
   "webdev": [
     {
       "title": "Portfolio",
-      "descrip": "That is my friend you are looking at",
-      "githubLink": "#",
+      "descrip": "You are looking at it, my friend!",
+      "githubLink": "",
       "demoLink": "#",
       "stack": [
-        "React",
+        "NextJS",
         "Tailwind CSS",
         "Node.js",
-        "Express",
-        "MongoDB",
-        "Prisma",
-        "Material UI"
+        "Framer-motion",
+        "Three.js",
+        "React Three Fiber",
+        "TypeScript"
       ],
-      "image": "assets/projects/portfolio.jpg"
+      "image": "assets/projects/portfolio.png"
     },
 
     {
@@ -29,15 +29,16 @@
         "Express",
         "MongoDB",
         "Prisma",
-        "Material UI"
+        "Material UI",
+        "JavaScript"
       ],
-      "image": "assets/projects/stock_monitor.jpg"
+      "image": "assets/projects/stock_monitor.png"
     },
     {
       "title": "Whisper",
       "descrip": "Real time chat application",
       "githubLink": "https://github.com/BhaveshMukheja/real-time-chat-app-whisper",
-      "demoLink": "https://github.com/BhaveshMukheja/real-time-chat-app-whisper",
+      "demoLink": "",
       "stack": [
         "NextJS",
         "Express",
@@ -49,15 +50,15 @@
         "WebSocket",
         "Framer-motion"
       ],
-      "image": "assets/projects/whisper.jpg"
+      "image": "assets/projects/whisper.png"
     },
     {
       "title": "your_prop",
       "descrip": "A swipeable property finder application",
-      "githubLink": "#",
-      "demoLink": "#",
+      "githubLink": "https://github.com/BhaveshMukheja/your_prop",
+      "demoLink": "https://bhaveshmukheja.github.io/your_prop/",
       "stack": ["React", "Framer-motion", "TypeScript", "Tailwind CSS"],
-      "image": "assets/projects/your_prop.jpg"
+      "image": "assets/projects/your_prop.png"
     },
     {
       "title": "Streamverse",
@@ -65,27 +66,26 @@
       "githubLink": "https://github.com/BhaveshMukheja/Streamverse",
       "demoLink": "https://bhaveshmukheja.github.io/Streamverse/",
       "stack": ["React", "Framer-motion", "JavaScript", "Tailwind CSS"],
-      "image": "assets/projects/streamverse.jpg"
+      "image": "assets/projects/streamverse.png"
     }
-    
   ],
 
   "MLnResearch": [
-{
+    {
       "title": "Image Caption Generator",
       "descrip": "NLP Based Image Caption Generator",
       "githubLink": "https://github.com/BhaveshMukheja/image-caption-generator",
-      "demoLink": "https://github.com/BhaveshMukheja/image-caption-generator",
+      "demoLink": "",
       "stack": ["Python", "TensorFlow", "NLP", "LSTM", "VGG16"],
-      "image": "assets/projects/image_generator.jpg"
+      "image": "assets/projects/image_generator.png"
     },
     {
       "title": "Term Paper on Mechanical Neural Networks",
       "descrip": "Indian Institute of Technology Kharagpur, Prof. Pintu Patra",
       "githubLink": "",
       "demoLink": "https://drive.google.com/file/d/1ZVoZzORLrV7Z2qvXLZAaMzughMHnZOdk/view?usp=sharing",
-      "stack":[],
-      "image": "assets/projects/mnn.jpg"
+      "stack": [],
+      "image": "assets/projects/cmp.png"
     },
     {
       "title": "Term Paper on Experimental Techniques in Neutrino Detection",
@@ -93,15 +93,21 @@
       "githubLink": "",
       "demoLink": "https://drive.google.com/file/d/1oH90mkmpxcE6LjiihCdWkfqYLD4uyoIy/view?usp=sharing",
       "stack": [],
-      "image": "assets/projects/neutrino.jpg"
+      "image": "assets/projects/neutrino.png"
     },
     {
       "title": "Term Paper on Identical Particles in Quantum Mechanics",
       "descrip": " Indian Institute of Technology Kharagpur, Prof. Tirtha Sankar Ray",
       "githubLink": "",
-      "demoLink": "Ihttps://drive.google.com/file/d/1pFy-swP0nn6Tuv3dktxBO9RxOvN3mtrQ/view?usp=sharing",
+      "demoLink": "https://drive.google.com/file/d/1pFy-swP0nn6Tuv3dktxBO9RxOvN3mtrQ/view?usp=sharing",
       "stack": [],
-      "image": "assets/projects/quantum.jpg"
+      "image": "assets/projects/quantum.png"
+    }
+  ],
+
+  "blackScreen": [
+    {
+      "image": "assets/projects/blackScreen.png"
     }
   ]
 }

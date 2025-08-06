@@ -6,15 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
     "@tensorflow/tfjs": "^4.22.0",
     "framer-motion": "^12.15.0",
+    "gasp": "^0.0.2",
+    "gsap": "^3.13.0",
     "leva": "^0.10.0",
     "next": "15.3.3",
+    "next-sitemap": "^4.2.3",
     "primereact": "^10.9.6",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
@@ -26,13 +30,17 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.8",
+    "@types/locomotive-scroll": "^4.1.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "locomotive-scroll": "^4.1.4",
     "postcss": "^8.5.6",
+    "react-vertical-timeline-component": "^3.5.3",
     "tailwindcss": "^4.1.10",
     "typescript": "^5"
   }

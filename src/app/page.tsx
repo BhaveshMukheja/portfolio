@@ -1,27 +1,17 @@
-'use client'
-import Carousel from './Components/Carousel/comp'
-import Navbar from './Components/Navbar/comp'
-import Skill from './Components/Skills/comp'
-import Timeline from './Components/Timeline/comp'
-import Projects from './Components/Projects/comp'
-import Competions from './Components/Competitions/comp'
-import AboutMe from './Components/AboutMe/comp'
-
-
+import SeoHead from "./Components/SeoHead/comp";
+import Dashboard from "./Components/Dashboard/comp"; // new client component
 
 export default function Home() {
-
-
   return (
     <>
-      <Navbar />
-      <Carousel />
-      <Skill />
-      <Timeline/>
-      <Projects/>
-      <Competions/>
-      <AboutMe/>
+      <SeoHead
+        title="Bhavesh Mukheja | AI Researcher & Full Stack Developer"
+        description="Welcome to my portfolio — I am an AI Researcher and Web Developer, and forever Physicist and musician. What am I aiming for? Bridging the gap between Physics and CS. Want to know about me, dig in!"
+        url=""
+        image="public/assets/projects/portfolio.png"
+      />
 
+      <Dashboard />
     </>
-  )
+  );
 }
