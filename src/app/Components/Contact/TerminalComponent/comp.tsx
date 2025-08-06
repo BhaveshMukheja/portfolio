@@ -24,7 +24,6 @@ type GifCommand = {
   text: string;
 };
 
-
 const gifCommands: Record<string, GifCommand> = {
   "npm install": {
     gif: "https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif",
@@ -42,12 +41,11 @@ const gifCommands: Record<string, GifCommand> = {
     gif: "https://media1.tenor.com/m/BEsL9FFFGN4AAAAd/the-office-michael-scott.gif",
     text: "",
   },
-  "kill": {
+  kill: {
     gif: "https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif",
     text: "HA! Got ya First!",
   },
 };
-
 
 // Terminal component
 const Terminal: React.FC = () => {
@@ -58,22 +56,27 @@ const Terminal: React.FC = () => {
       content: (
         <div>
           {/* Welcome Message */}
-          <div className="text-white inline-flex">
-            Thanks for visiting my{" "}
-            <p className="text-cyan-400 uppercase ml-2">portfolio</p>
+          <div className="text-white inline-flex flex-wrap">
+            <span>Thanks for visiting my</span>
+            <span className="text-cyan-400 uppercase ml-2">portfolio</span>
           </div>
-          <div className="text-white inline-flex">
-            I will be more than happy to hear your reviews or suggestions
+
+          <div className="text-white mt-2">
+            Appreciate you scrolling through! I'm always open to exciting
+            opportunities, feedback, or even a quick hello.
           </div>
-          <span className="text-white inline-flex">
-            You can find my{" "}
-            <p className="text-fuchsia-400 mx-2">social media</p> links at the
-            bottom of the phone. <p className="text-red-400 mx-2">See ya!</p>
-          </span>
+
+          <div className="text-white inline-flex flex-wrap mt-2">
+            <span>Feel free to connect with me via the</span>
+            <span className="text-fuchsia-400 mx-2">social media</span>
+            <span>links at the bottom of the phone 👈.</span>
+            <span className="text-red-400 mx-2">See ya!</span>
+          </div>
 
           <div className="text-white inline-flex mt-6">
-            Type <p className="text-green-500 mx-2 ">'help'</p> to know the
-            commands available
+            <span>Type</span>
+            <span className="text-green-500 mx-2">'help'</span>
+            <span>to know the commands available</span>
           </div>
         </div>
       ),
@@ -120,7 +123,10 @@ const Terminal: React.FC = () => {
           </a>
         </div>
       );
-      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
+      setHistory((prev) => [
+        ...prev,
+        { type: "component", content: componentOutput },
+      ]);
       return;
     }
 
@@ -143,7 +149,10 @@ const Terminal: React.FC = () => {
           </ul>
         </div>
       );
-      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
+      setHistory((prev) => [
+        ...prev,
+        { type: "component", content: componentOutput },
+      ]);
       return;
     }
 
@@ -159,9 +168,7 @@ const Terminal: React.FC = () => {
     if (gifCommands[cmd]) {
       const componentOutput = (
         <div className="p-3 rounded mt-2 text-white">
-          <div>
-            {gifCommands[cmd].text}
-          </div>
+          <div>{gifCommands[cmd].text}</div>
           <Image
             unoptimized
             src={gifCommands[cmd].gif}
@@ -172,7 +179,10 @@ const Terminal: React.FC = () => {
           />
         </div>
       );
-      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
+      setHistory((prev) => [
+        ...prev,
+        { type: "component", content: componentOutput },
+      ]);
       return;
     }
 
@@ -182,22 +192,38 @@ const Terminal: React.FC = () => {
         <div className="p-3 rounded mt-2">
           <p className="text-fuchsia-400"> Here are some facts about me:</p>
           <ul className="text-white">
-            <li className="flex"><FaDev className="mt-1 mr-1" /> Full-Stack Developer</li>
-            <li className="flex"><GiArtificialHive className="mt-1 mr-1" /> AI Researcher</li>
-            <li className="flex"><IoPlanet className="mt-1 mr-1" /> Astrophysicist</li>
-            <li className="flex"><IoIosMusicalNotes className="mt-1 mr-1" /> Musician</li>
-            <li className="flex"><FaBook className="mt-1 mr-1" /> Nerd for The Office</li>
+            <li className="flex">
+              <FaDev className="mt-1 mr-1" /> Full-Stack Developer
+            </li>
+            <li className="flex">
+              <GiArtificialHive className="mt-1 mr-1" /> AI Researcher
+            </li>
+            <li className="flex">
+              <IoPlanet className="mt-1 mr-1" /> Astrophysicist
+            </li>
+            <li className="flex">
+              <IoIosMusicalNotes className="mt-1 mr-1" /> Musician
+            </li>
+            <li className="flex">
+              <FaBook className="mt-1 mr-1" /> Nerd for The Office
+            </li>
           </ul>
         </div>
       );
-      setHistory((prev) => [...prev, { type: "component", content: componentOutput }]);
+      setHistory((prev) => [
+        ...prev,
+        { type: "component", content: componentOutput },
+      ]);
       return;
     }
 
     // Command: hello
     if (cmd === "hello") {
       const commandOutput = "Hello!";
-      setHistory((prev) => [...prev, { type: "output", content: commandOutput }]);
+      setHistory((prev) => [
+        ...prev,
+        { type: "output", content: commandOutput },
+      ]);
       return;
     }
 
@@ -238,7 +264,6 @@ const Terminal: React.FC = () => {
   // Terminal UI rendering
   return (
     <div className="bg-black p-4 w-full max-w-2xl font-mono rounded-xl shadow-lg mx-auto">
-      
       {/* Top bar (Mac style) */}
       <div className="flex space-x-2 mb-2">
         <div className="w-3 h-3 rounded-full bg-red-500" />

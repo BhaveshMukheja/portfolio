@@ -79,7 +79,7 @@ This project is open-source for inspiration and learning purposes. You may not d
 
 ## Contact
 
-If you'd like to get in touch or collaborate, feel free to connect:
+I'm always open to exciting opportunities, feedback, or even a quick hello.Feel free to connect with me via:
 
 - Portfolio: yourdomain.com
 - Email: bhavesh.bm.3000@gmail.com
