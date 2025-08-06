@@ -9,7 +9,7 @@ const Loader = () => {
 
   useEffect(() => {
     if (progress < 100) {
-      const timeout = setTimeout(() => setProgress(progress + 1), 25);
+      const timeout = setTimeout(() => setProgress(progress + 1), 20);
       return () => clearTimeout(timeout);
     } else {
       // Trigger fade-out once we hit 100%

@@ -19,6 +19,36 @@ const commandMap: Record<string, string> = {
   // e.g., about: 'This is a CLI portfolio',
 };
 
+type GifCommand = {
+  gif: string;
+  text: string;
+};
+
+
+const gifCommands: Record<string, GifCommand> = {
+  "npm install": {
+    gif: "https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif",
+    text: "Oh you want to install Packages! Here you GO!",
+  },
+  "git push": {
+    gif: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2g2NTZhajRmbWpnazBkb3VsNWtqbHczcm1hemJyZ3N5aWU4em14ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UCprfrXABmEKG1a8SE/giphy.gif",
+    text: "I AM TRYING!",
+  },
+  "git add": {
+    gif: "https://media1.tenor.com/m/c4YEuiMQfBAAAAAd/ryan-howard-bj-novak.gif",
+    text: "DONE!",
+  },
+  "my dream": {
+    gif: "https://media1.tenor.com/m/BEsL9FFFGN4AAAAd/the-office-michael-scott.gif",
+    text: "",
+  },
+  "kill": {
+    gif: "https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif",
+    text: "HA! Got ya First!",
+  },
+};
+
+
 // Terminal component
 const Terminal: React.FC = () => {
   const [input, setInput] = useState(""); // Input field value
@@ -118,20 +148,23 @@ const Terminal: React.FC = () => {
     }
 
     // Meme/GIF responses
-    const gifCommands: Record<string, string> = {
-      "npm install": "https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif",
-      "git push": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2g2NTZhajRmbWpnazBkb3VsNWtqbHczcm1hemJyZ3N5aWU4em14ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UCprfrXABmEKG1a8SE/giphy.gif",
-      "git add": "https://media1.tenor.com/m/c4YEuiMQfBAAAAAd/ryan-howard-bj-novak.gif",
-      "my dream": "https://media1.tenor.com/m/BEsL9FFFGN4AAAAd/the-office-michael-scott.gif",
-      "kill": "https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif"
-    };
+    // const gifCommands: Record<string, Object> = {
+    //   "npm install": {gif:"https://media1.tenor.com/m/Oe2I42VOuMoAAAAd/npm-install.gif", text:"Oh you want to install Packages! Here you GO!"},
+    //   "git push": {gif:"https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2g2NTZhajRmbWpnazBkb3VsNWtqbHczcm1hemJyZ3N5aWU4em14ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UCprfrXABmEKG1a8SE/giphy.gif",text:"I AM TRYING!"}
+    //   "git add": {gif: "https://media1.tenor.com/m/c4YEuiMQfBAAAAAd/ryan-howard-bj-novak.gif", text:"DONE!"},
+    //   "my dream": {gif:"https://media1.tenor.com/m/BEsL9FFFGN4AAAAd/the-office-michael-scott.gif",text:""}
+    //   "kill": {gif:"https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif",text:"HA! Got ya First!}"
+    // };
 
     if (gifCommands[cmd]) {
       const componentOutput = (
         <div className="p-3 rounded mt-2 text-white">
+          <div>
+            {gifCommands[cmd].text}
+          </div>
           <Image
             unoptimized
-            src={gifCommands[cmd]}
+            src={gifCommands[cmd].gif}
             className="object-cover w-full h-[300px]"
             width={50}
             height={100}

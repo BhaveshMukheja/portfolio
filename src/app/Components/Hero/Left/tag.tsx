@@ -17,29 +17,30 @@ const Tag = ({ mouseX }: Props) => {
   const opacity = useTransform(mouseX, [width / 4, width / 2], [0, 1]);
 
   return (
-    // Full height section
-    <div className="h-screen">
+    <>
+      {/* // Full height section */}
+
       {/* Motion div fades in based on cursor X position */}
       <motion.div
         style={{ opacity }}
         transition={{
-          duration: 0.8,       // Smooth fade
-          delay: 0.5,          // Slight delay before showing
+          duration: 0.8, // Smooth fade
+          delay: 0.5, // Slight delay before showing
           ease: [0, 0.71, 0.2, 1.01], // Custom easing curve for natural feel
         }}
         className="absolute top-[35%] left-[10%] text-center"
       >
         {/* Title Text */}
         <p className="text-5xl font-rob">AI Researcher</p>
-        
+
         {/* Subtitle */}
         <p className="text-lg mt-5 text-gray-400">
-          Exploring intelligence through 
+          Exploring intelligence through
           <br />
           data, models, and the cosmos
         </p>
       </motion.div>
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Carousel from "../Hero/comp";
+import Hero from "../Hero/comp";
 import Skill from "../Skills/comp";
 import Timeline from "../Timeline/comp";
 import Projects from "../Projects/comp";
@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 6000);
+    const timer = setTimeout(() => setLoaded(true), 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,13 +23,13 @@ export default function Dashboard() {
     <>
       {!loaded && <Loader />}
 
-      {/* Pre-load carousel during loader */}
-      <div className={`${loaded ? "" : "invisible absolute -z-10"}`}>
-        <Carousel />
-      </div>
+      {/* Pre-load Heroduring loader */}
+      {/* <div className={`${loaded ? "" : "invisible absolute -z-10"}`}> */}
+      {/* </div> */}
 
       {loaded && (
         <main>
+          <Hero/>
           <SciFiRoom />
           <Skill />
           <Timeline />

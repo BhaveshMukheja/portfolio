@@ -21,7 +21,7 @@ const Tag = ({ mouseX }: Props) => {
   const opacity = useTransform(mouseX, [width / 2, width - width / 4], [1, 0]);
 
   return (
-    <div className="h-screen">
+    <>
       {/* Animated div whose opacity changes based on mouse position */}
       <motion.div
         style={{ opacity }} // Apply the opacity motion value
@@ -34,7 +34,7 @@ const Tag = ({ mouseX }: Props) => {
       >
         {/* Main title text */}
         <p className="text-5xl font-rob">Full-Stack Developer</p>
-        
+
         {/* Subtitle text with smaller size and gray color */}
         <p className="text-lg mt-5 text-gray-500">
           Obsessed with clean code and
@@ -42,7 +42,7 @@ const Tag = ({ mouseX }: Props) => {
           seamless user experiences
         </p>
       </motion.div>
-    </div>
+    </>
   );
 };
 

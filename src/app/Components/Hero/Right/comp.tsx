@@ -16,6 +16,7 @@ export default function RightImage({ mouseX }: Props) {
 
   // Set up a transformation: as mouse moves right, image moves left (parallax effect)
   const translateX = useTransform(mouseX, [0, width], ["-100%", "0%"]);
+  
 
   return (
     // Container taking right half of the screen, positioned at bottom right
@@ -37,7 +38,7 @@ export default function RightImage({ mouseX }: Props) {
         {/* Full-size image with object cover */}
         <Image
           src={RightImageSrc}       // Imported static asset
-          alt="Hero Section Right Image"               // Alt text for accessibility
+          alt="Hero Section Right"               // Alt text for accessibility
           fill                      // Fills the parent container
           className="object-cover"  // Ensures image covers the container without distortion
           priority                  // Loads this image with high priority (important for hero sections)

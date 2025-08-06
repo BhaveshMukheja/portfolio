@@ -7,7 +7,7 @@ import Right from "./Right/comp";
 import LeftTag from "./Left/tag";
 import RightTag from "./Right/tag";
 
-export default function Home() {
+export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Center mouseX on first render
@@ -41,13 +41,14 @@ export default function Home() {
   };
 
   return (
+    <div className="w-screen h-screen ">
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+      transition={{ duration: 3.0, ease: "easeOut" }}
       id="home"
       ref={containerRef}
-      className="w-screen h-screen flex overflow-hidden bg-white"
+      className="h-full w-full absolute top-4 flex bg-white"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -56,5 +57,6 @@ export default function Home() {
       <Left mouseX={mouseX} />
       <Right mouseX={mouseX} />
     </motion.div>
+    </div>
   );
 }
