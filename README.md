@@ -34,16 +34,7 @@ If you want to know me in short then - I am an AI Researcher and Web Developer, 
 
 ## Project Structure
 
-├── public/ # Static assets (images, fonts, icons)
-├── components/ # Reusable UI components
-├── sections/ # Different sections of the site
-├── three/ # React Three Fiber 3D components
-├── hooks/ # Custom React hooks
-├── context/ # Global providers like loading context
-├── styles/ # Tailwind config, globals
-├── pages/ # Next.js routing pages
-├── utils/ # Utility functions
-└── README.md # You are here
+<pre> <code>```bash ├── public/ # Static assets (images, fonts, icons) ├── components/ # Reusable UI components ├── sections/ # Different sections of the site ├── three/ # React Three Fiber 3D components ├── hooks/ # Custom React hooks ├── context/ # Global providers like loading context ├── styles/ # Tailwind config, globals ├── pages/ # Next.js routing pages ├── utils/ # Utility functions └── README.md # You are here :) ```</code> </pre>
 
 ## Local Development
 
@@ -67,7 +58,7 @@ npm run dev
 yarn dev
 ```
 
-App runs locally at: [text](http://localhost:3000)
+App runs locally at: [http://localhost:3000](http://localhost:3000)
 
 ## License 
 This project is open-source for inspiration and learning purposes. You may not directly replicate and use this as your own without proper credit.
@@ -85,3 +76,12 @@ This project is open-source for inspiration and learning purposes. You may not d
 - [Anzhelika](https://a-coderr.github.io/portfolio-website/#home)
 - [Ashleigh](https://a-coderr.github.io/portfolio-website/#home)
 - [Adham](https://www.adhamdannaway.com/)
+
+## Contact
+
+If you'd like to get in touch or collaborate, feel free to connect:
+
+- Portfolio: yourdomain.com
+- Email: bhavesh.bm.3000@gmail.com
+- LinkedIn: https://www.linkedin.com/in/bhavesh-mukheja-1925b2239/
+- Instagram: https://www.instagram.com/bhavesh_mukheja/
