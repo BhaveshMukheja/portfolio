@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Billboard, Text, TrackballControls, Html } from "@react-three/drei";
-import { useskillHoverContext } from "@/app/Context/skillHoverContext";
+import { useSkillHoverContext } from "@/app/Context/skillHoverContext";
 
 // All skills to be displayed in the 3D skill cloud
 const skills = [
@@ -139,7 +139,7 @@ function Cloud({
 
 // Top-level component that renders the 3D canvas and cloud
 export default function Comp() {
-  const { hoveredKey } = useskillHoverContext(); // Get hovered card ID from context
+  const { hoveredKey } = useSkillHoverContext(); // Get hovered card ID from context
 
   return (
     <div>

@@ -10,8 +10,8 @@ Title: Lo-Fi Study Girl(room)
 
 "use client";
 
-import React, { useEffect, useMemo, useRef } from "react";
-import { Html, useGLTF, useTexture } from "@react-three/drei";
+import React, { useMemo, useRef } from "react";
+import {useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import {
   MeshStandardMaterial,

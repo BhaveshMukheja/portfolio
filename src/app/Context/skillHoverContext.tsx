@@ -32,10 +32,10 @@ export const HoverProvider = ({ children }: { children: ReactNode }) => {
  * @throws Error if used outside of HoverProvider
  * @returns The skill hover context value
  */
-export const useskillHoverContext = (): skillHoverContextType => {
+export const useSkillHoverContext = (): skillHoverContextType => {
   const context = useContext(skillHoverContext)
   if (!context) {
-    throw new Error('useskillHoverContext must be used within a HoverProvider')
+    throw new Error('useSkillHoverContext must be used within a HoverProvider')
   }
   return context
 }

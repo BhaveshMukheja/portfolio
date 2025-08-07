@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber"; // Used to run code on every animation frame in the render loop
 import { useScroll, useTransform, useSpring } from "framer-motion"; // Hooks for scroll-based animation and smoothing
 import { Model } from "./model"; // 3D model component
+import { Group } from "three";
+import * as THREE from "three";
 
 export default function AnimatedRoom() {
   // Hook to get scroll progress between 0 and 1
@@ -33,7 +35,7 @@ export default function AnimatedRoom() {
   const scale = useSpring(rawScale, smoothConfig);
 
   // Ref to access and manipulate the 3D model directly
-  const ref = useRef<any>(0);
+ const ref = useRef<THREE.Group>(null);
 
   // Runs on every animation frame to update model's transform properties
   useFrame(() => {
