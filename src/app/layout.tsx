@@ -1,7 +1,7 @@
 "use client"; // Make RootLayout a client component (if needed, read below)
 
 import dynamic from "next/dynamic";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Pacifico, Tangerine } from "next/font/google";
 import "./globals.css";
 import SkillHoverProvider from "./Context/skillHoverContext";
 import ProjectHoverProvider from "./Context/projectHoverContext";
@@ -21,6 +21,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const instaFont = Pacifico({
+  variable: "--font-insta",
+  subsets: ["latin"],
+  weight: "400"
+})
+
+const tang = Tangerine({
+  variable:"--font-tang",
+  subsets:["latin"],
+  weight:"400"
+})
 export default function RootLayout({
   children,
 }: {
@@ -38,6 +49,8 @@ export default function RootLayout({
         className={`
           ${geistSans.variable}
           ${geistMono.variable}
+          ${instaFont.variable}
+          ${tang.variable}
           antialiased
         `}
       >

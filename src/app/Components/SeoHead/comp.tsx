@@ -10,7 +10,7 @@ type SeoHeadProps = {
 const SeoHead = ({
   title,
   description,
-  url = "https://yourdomain.com",
+  url = "https://bhavesh-portfolio-self.vercel.app/",
   image = "/assets/projects/portfolio.png", // fixed path format
 }: SeoHeadProps) => {
   const jsonLd = {
@@ -18,7 +18,7 @@ const SeoHead = ({
     "@type": "Person",
     name: "Bhavesh Mukheja",
     url: url,
-    image: `https://yourdomain.com${image}`, // Update to your real domain
+    image: `https://bhavesh-portfolio-self.vercel.app/${image}`, // Update to your real domain
     jobTitle: "Full-Stack Developer & AI Researcher",
     worksFor: [
       {

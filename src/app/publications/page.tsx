@@ -24,7 +24,7 @@ export default function Publications() {
       <SeoHead
         title="Publications | Bhavesh Mukheja | AI Researcher & Full Stack Developer"
         description="You can see what I am upto in research field currently."
-        url=""
+        url="https://bhavesh-portfolio-self.vercel.app/publications"
         image="public/assets/projects/portfolio.png"
       />
       <main>

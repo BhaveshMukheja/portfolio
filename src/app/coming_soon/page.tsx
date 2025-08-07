@@ -60,7 +60,7 @@ export default function Page() {
       <SeoHead
         title="Coming Soon | Bhavesh Mukheja"
         description="Hang tight! Working on it! Will be back with it soon! Arigato!"
-        url=""
+        url="https://bhavesh-portfolio-self.vercel.app/coming_soon?tab=about"
         image="public/assets/projects/portfolio.png"
       />
       <main>

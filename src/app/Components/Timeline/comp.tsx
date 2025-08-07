@@ -111,7 +111,7 @@ const Comp = () => {
                   </h4>
 
                   {/* Description */}
-                  <p className="w-[80%]">{item.descrip}</p>
+                  <div className="w-[80%] mt-4">{item.descrip}</div>
                 </div>
               </div>
             </VerticalTimelineElement>
