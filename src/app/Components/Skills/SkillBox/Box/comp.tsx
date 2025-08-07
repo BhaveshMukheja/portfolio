@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { useSkillHoverContext } from "@/app/Context/skillHoverContext";
 
@@ -11,7 +11,7 @@ interface CompProps {
 }
 
 const Comp: React.FC<CompProps> = ({ id, logo, title, skills }) => {
-  const { hoveredKey, setHoveredKey } = useSkillHoverContext();
+  const { setHoveredKey } = useSkillHoverContext();
   const [isHovered, setIsHovered] = useState(false);
 
   return (

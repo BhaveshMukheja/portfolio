@@ -10,7 +10,7 @@ html {
 }
 
 @theme {
-  --font-insta: Pacifico, "sans-serif";
+  --font-insta: "Pacifico", "Tangerine", "sans-serif";
   --font-newsreader: "Newsreader", serif;
   --font-zilla: "Zilla Slab", serif;
   --font-rob: "Roboto", sans-serif;

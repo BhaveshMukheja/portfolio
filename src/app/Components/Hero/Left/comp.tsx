@@ -41,6 +41,8 @@ export default function LeftImage({ mouseX }: Props) {
           fill                     // Fills the container
           className="object-cover brightness-125" // Styling the image
           priority                 // Preloads the image for faster rendering
+          // width={100}
+          // height={100}
         />
       </motion.div>
     </div>

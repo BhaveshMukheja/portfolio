@@ -1,7 +1,7 @@
 [
   {
-    "logo": "assets/experience/addverb.png",
-    "logo-white": "assets/experience/addverb2.png",
+    "logo": "/assets/experience/addverb.png",
+    "logo-white": "/assets/experience/addverb2.png",
     "title": "Addverb Technologies, Nodia",
     "role": "Incoming Gradutate Engnieer Trainee",
     "time": "Aug'25 - ",
@@ -10,8 +10,8 @@
     "icon-color": "#EC2F23"
   },
   {
-    "logo": "assets/experience/arogo.png",
-    "logo-white": "assets/experience/arogo2.png",
+    "logo": "/assets/experience/arogo.png",
+    "logo-white": "/assets/experience/arogo2.png",
     "title": "Arogo AI",
     "role": "Led Developer Intern",
     "time": "Jun'25 - Present",
@@ -20,8 +20,8 @@
     "icon-color": "#4F0DD3"
   },
   {
-    "logo": "assets/experience/kgp.png",
-    "logo-white": "assets/experience/kgp2.png",
+    "logo": "/assets/experience/kgp.png",
+    "logo-white": "/assets/experience/kgp2.png",
     "title": "Indian Institute of Technology, Kharagpur",
     "role": "B.S. (Honors) Physics",
     "time": "2021-2025",
@@ -30,8 +30,8 @@
     "icon-color": "#33247B"
   },
   {
-    "logo": "assets/experience/iia.png",
-    "logo-white": "assets/experience/iia.png",
+    "logo": "/assets/experience/iia.png",
+    "logo-white": "/assets/experience/iia.png",
     "title": "Indian Institute of Astrophysics, Bangalore",
     "role": "Research Fellow",
     "time": "Dec'23-Present",
@@ -50,8 +50,8 @@
     "icon-color": "#86efac"
   },
   {
-    "logo": "assets/experience/sdps.png",
-    "logo-white": "assets/experience/sdps.png",
+    "logo": "/assets/experience/sdps.png",
+    "logo-white": "/assets/experience/sdps.png",
     "title": "S.D. Public School, Muzaffarnagar",
     "role": "Student",
     "time": "2007-2021",

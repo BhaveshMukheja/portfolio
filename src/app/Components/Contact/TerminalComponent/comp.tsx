@@ -3,10 +3,10 @@
 import Image from "next/image";
 import React, { useState, useRef, useEffect, KeyboardEvent } from "react";
 import { FaBook, FaDev } from "react-icons/fa";
-import { FaGun } from "react-icons/fa6";
+// import { FaGun } from "react-icons/fa6";
 import { GiArtificialHive } from "react-icons/gi";
 import { IoIosMusicalNotes } from "react-icons/io";
-import { IoMusicalNote, IoPlanet } from "react-icons/io5";
+import { IoPlanet } from "react-icons/io5";
 
 // Define the type for terminal entries
 type TerminalEntry =
@@ -43,7 +43,7 @@ const gifCommands: Record<string, GifCommand> = {
   },
   kill: {
     gif: "https://media1.tenor.com/m/T9ggIIvCZ_EAAAAC/the-office-gun.gif",
-    text: "HA! Got ya First!",
+    text: "HA! Got ya First! 😎",
   },
 };
 
@@ -61,9 +61,10 @@ const Terminal: React.FC = () => {
             <span className="text-cyan-400 uppercase ml-2">portfolio</span>
           </div>
 
-          <div className="text-white mt-2">
-            Appreciate you scrolling through! I'm always open to exciting
-            opportunities, feedback, or even a quick hello.
+          <div className="text-white mt-2 inline-flex flex-wrap">
+            Appreciate you scrolling through! I&#39;m always open to exciting
+            <span className="text-orange-400">opportunities</span>, feedback, or
+            even a quick hello.
           </div>
 
           <div className="text-white inline-flex flex-wrap mt-2">
@@ -75,7 +76,7 @@ const Terminal: React.FC = () => {
 
           <div className="text-white inline-flex mt-6">
             <span>Type</span>
-            <span className="text-green-500 mx-2">'help'</span>
+            <span className="text-green-500 mx-2">&#39;help&#39;</span>
             <span>to know the commands available</span>
           </div>
         </div>

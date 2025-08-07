@@ -42,6 +42,8 @@ export default function RightImage({ mouseX }: Props) {
           fill                      // Fills the parent container
           className="object-cover"  // Ensures image covers the container without distortion
           priority                  // Loads this image with high priority (important for hero sections)
+          // width={100}
+          // height={100}
         />
       </motion.div>
     </div>

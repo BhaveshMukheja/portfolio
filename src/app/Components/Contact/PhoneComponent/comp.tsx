@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import React from "react";
 import { BiMessageRounded } from "react-icons/bi";
 import {
@@ -12,6 +13,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { FiSend } from "react-icons/fi";
 import { IoIosMore } from "react-icons/io";
 import { LuMessageCircleMore } from "react-icons/lu";
+
 
 // Dynamically import the TodayDate component without SSR (client-side only)
 const TodayDate = dynamic(() => import('../../TimeAndDate/TodayDate'), { ssr: false });
@@ -91,10 +93,13 @@ const IPhoneInstagramUI: React.FC = () => {
               
               {/* Post Header: Profile Info */}
               <div className="flex items-center px-2 py-2">
-                <img
+                <Image
+                unoptimized
                   className="w-8 h-8 rounded-full object-cover"
                   src="assets/yoyo5.jpg"
                   alt="Bhavesh Instagram avatar"
+                  width={100}
+                  height={100}
                 />
                 <span className="font-semibold text-sm ml-3">bhavesh_mukheja</span>
                 <span className="absolute right-7">
@@ -104,10 +109,13 @@ const IPhoneInstagramUI: React.FC = () => {
 
               {/* Post Image */}
               <div className="w-full h-72 bg-gray-300">
-                <img
+                <Image
+                unoptimized
                   className="w-full h-full object-cover"
                   src="assets/insta.jpeg"
                   alt="Post content"
+                  width={100}
+                  height={100}
                 />
               </div>
 
@@ -126,7 +134,7 @@ const IPhoneInstagramUI: React.FC = () => {
               {/* Post caption and metadata */}
               <div className="text-sm p-2">
                 <span className="font-bold">bhavesh_mukheja </span>
-                Let's connect. You can find my contact links below.
+                Let&#39;s connect. You can find my contact links below.
                 <p className="text-xs text-gray-500 mt-1">View all 7 comments</p>
                 <p className="text-xs text-gray-500 mt-1"></p>
 

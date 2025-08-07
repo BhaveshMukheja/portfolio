@@ -81,7 +81,7 @@ export default function Page() {
             </p>
 
             <p>Until then...</p>
-            <p className="font-semibold">Let's Connect.</p>
+            <p className="font-semibold">Let&#39;s Connect.</p>
 
             <SocialIcons />
           </div>

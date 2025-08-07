@@ -9,7 +9,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 // Icons used for timeline nodes
-import { BiHeart } from "react-icons/bi";
+// import { BiHeart } from "react-icons/bi";
 import { GiCircuitry } from "react-icons/gi";
 import { RiMentalHealthFill } from "react-icons/ri";
 import { IoIosSchool } from "react-icons/io";
@@ -19,6 +19,7 @@ import { FaSchoolFlag } from "react-icons/fa6";
 
 // Timeline data (experience + education)
 import expData from "../../Data/expAndEdu.json";
+import Image from "next/image";
 
 // Map of string keys to React icon components used in timeline
 const iconMap: Record<string, React.ComponentType> = {
@@ -84,12 +85,14 @@ const Comp = () => {
                 <div className={`relative z-10 ${isHovered ? "text-white" : ""}`}>
                   {/* Optional logo (black or white depending on hover state) */}
                   {item.logo?.trim() ? (
-                    <img
+                    <Image
                       src={isHovered ? item["logo-white"] : item.logo}
                       alt={item.title}
                       className={`absolute z-20 transition-all duration-400 ${
                         i === 0 || i === 1 ? "w-24" : "w-16"
                       } right-5`}
+                      width={100}
+                      height={50}
                     />
                   ) : null}
 

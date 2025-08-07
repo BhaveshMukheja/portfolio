@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber"; // Used to run code on every animation frame in the render loop
 import { useScroll, useTransform, useSpring } from "framer-motion"; // Hooks for scroll-based animation and smoothing
 import { Model } from "./model"; // 3D model component
-import { Group } from "three";
+// import { Group } from "three";
 import * as THREE from "three";
 
 export default function AnimatedRoom() {

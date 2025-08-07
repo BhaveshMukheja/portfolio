@@ -8,15 +8,47 @@ import { useSkillHoverContext } from "@/app/Context/skillHoverContext";
 
 // All skills to be displayed in the 3D skill cloud
 const skills = [
-  "c", "cpp", "javascript", "typescript", "python", "r", "html", "css", "tailwindcss",
-  "react", "next", "vite", "node", "express", "mongo", "mongoose", "prisma", "postgresql",
-  "tensorflow", "keras", "opencv", "pytorch", "scikitlearn", "chatgpt", "sql", "aws",
-  "git", "github", "docker", "latex", "premierepro", "aftereffects", "photoshop",
+  "c",
+  "cpp",
+  "javascript",
+  "typescript",
+  "python",
+  "r",
+  "html",
+  "css",
+  "tailwindcss",
+  "react",
+  "next",
+  "vite",
+  "node",
+  "express",
+  "mongo",
+  "mongoose",
+  "prisma",
+  "postgresql",
+  "tensorflow",
+  "keras",
+  "opencv",
+  "pytorch",
+  "scikitlearn",
+  "chatgpt",
+  "sql",
+  "aws",
+  "git",
+  "github",
+  "docker",
+  "latex",
+  "premierepro",
+  "aftereffects",
+  "photoshop",
 ];
 
 // Mapping of component `id`s to specific skill sets (used for hover highlight)
 const hoverSkills = [
-  { id: 1, skills: ["c", "cpp", "javascript", "typescript", "python", "r", "sql"] },
+  {
+    id: 1,
+    skills: ["c", "cpp", "javascript", "typescript", "python", "r", "sql"],
+  },
   { id: 2, skills: ["html", "css", "tailwindcss", "javascript", "typescript"] },
   { id: 3, skills: ["react", "next", "vite"] },
   { id: 4, skills: ["node", "express", "python", "aws"] },
@@ -44,14 +76,14 @@ function Word({
   hoveredKey,
   hoverSkillMap,
 }: {
-  children: string;                    // Skill name
-  position: THREE.Vector3;            // 3D position in the sphere
-  hoveredKey: number | null;          // Currently hovered card/component ID
-  hoverSkillMap: Map<number, Set<string>>; // Hoverable skills for each ID
+  children: React.ReactNode;
+  position: THREE.Vector3;
+  hoveredKey: number | null;
+  hoverSkillMap: Map<number, Set<string>>;
 }) {
   const ref = useRef<THREE.Mesh>(null);
+  const skill = children as string;
 
-  // Font styling for Text component
   const fontProps = {
     fontSize: 3.5,
     letterSpacing: -0.05,
@@ -59,10 +91,8 @@ function Word({
     "material-toneMapped": false,
   };
 
-  // Whether this skill should be active (highlighted)
-  const isActive = hoverSkillMap.get(hoveredKey || -1)?.has(children) ?? false;
+  const isActive = hoverSkillMap.get(hoveredKey || -1)?.has(skill) ?? false;
 
-  // Animate the icon color based on hover status
   useFrame(() => {
     if (ref.current) {
       const mat = ref.current.material as THREE.MeshBasicMaterial;
@@ -81,7 +111,7 @@ function Word({
       >
         <Html center>
           <i
-            className={`ci ci-${children} ci-2x text-black transition-transform duration-300 ${
+            className={`ci ci-${skill} ci-2x text-black transition-transform duration-300 ${
               isActive ? "scale-125" : "filter grayscale"
             }`}
             style={{ cursor: isActive ? "pointer" : "default" }}
@@ -97,8 +127,8 @@ function Cloud({
   radius = 45,
   hoveredKey,
 }: {
-  radius?: number;                   // Sphere radius
-  hoveredKey: number | null;        // Hovered component ID
+  radius?: number; // Sphere radius
+  hoveredKey: number | null; // Hovered component ID
 }) {
   const groupRef = useRef<THREE.Group>(null);
   const hoverSkillMap = useHoverSkillMap();
@@ -128,10 +158,11 @@ function Cloud({
         <Word
           key={index}
           position={positions[index]}
-          children={skill}
           hoveredKey={hoveredKey}
           hoverSkillMap={hoverSkillMap}
-        />
+        >
+          {skill}
+        </Word>
       ))}
     </group>
   );
