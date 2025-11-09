@@ -24,14 +24,14 @@ const geistMono = Geist_Mono({
 const instaFont = Pacifico({
   variable: "--font-insta",
   subsets: ["latin"],
-  weight: "400"
-})
+  weight: "400",
+});
 
 const tang = Tangerine({
-  variable:"--font-tang",
-  subsets:["latin"],
-  weight:"400"
-})
+  variable: "--font-tang",
+  subsets: ["latin"],
+  weight: "400",
+});
 export default function RootLayout({
   children,
 }: {
@@ -42,7 +42,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/dheereshagrwal/coloured-icons@master/src/app/ci.min.css"
+          href="https://cdn.jsdelivr.net/gh/dheereshag/coloured-icons@master/app/ci.min.css"
         />
       </head>
       <body
