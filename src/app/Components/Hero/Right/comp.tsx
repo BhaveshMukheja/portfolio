@@ -5,6 +5,7 @@ import { motion, useTransform, MotionValue } from "framer-motion";
 import useWindowWidth from "@/app/Hooks/useWindowWidth"; // Custom hook to get window width (responsive behavior)
 import Image from "next/image"; // Optimized image rendering
 import RightImageSrc from "../../../../../public/assets/ss2.png"; // Image source
+import pinkBg from "../../../../../public/assets/pinkBg4.png";
 
 // Define props type
 type Props = {
@@ -16,35 +17,40 @@ export default function RightImage({ mouseX }: Props) {
 
   // Set up a transformation: as mouse moves right, image moves left (parallax effect)
   const translateX = useTransform(mouseX, [0, width], ["-100%", "0%"]);
-  
 
   return (
     // Container taking right half of the screen, positioned at bottom right
-    <div className="w-1/2 h-full overflow-hidden absolute right-0 bottom-0">
+    <div className="w-full md:w-1/2  md:max-h-screen md:min-h-[700px] overflow-hidden ">
       {/* Motion div to animate the image horizontally */}
       <motion.div
-        style={{ translateX }} // Apply horizontal translation based on cursor position
+        style={{ translateX }} // Apply horizontal translation based on cursor position4
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           duration: 0.8, // Smooth transition duration
           ease: [0.49, 0.04, 0.5, 0.99], // Custom easing for natural motion
         }}
-        className="w-full h-[650px] absolute bottom-0"
+        className="w-full h-full relative"
       >
-        {/* Decorative arc at the bottom with a colorful gradient */}
-        <div className="absolute bottom-0">
-          <div className="w-[700px] h-86 rounded-t-full border-t-4 border-x-4 border-b-0 border-transparent bg-gradient-to-l from-pink-600 via-violet-600 to-indigo-600" />
+        {/* Full-size image with object cover */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={pinkBg}
+            alt="Pink bg"
+            className="object-contain  w-full bottom-0 absolute -left-7"
+            priority
+          />
         </div>
 
-        {/* Full-size image with object cover */}
-        <Image
-          src={RightImageSrc}       // Imported static asset
-          alt="Hero Section Right"               // Alt text for accessibility
-          fill                      // Fills the parent container
-          className="object-cover"  // Ensures image covers the container without distortion
-          priority                  // Loads this image with high priority (important for hero sections)
-          // width={100}
-          // height={100}
-        />
+        {/* Foreground: explicit z-10 */}
+        <div className="absolute inset-0 z-10">
+          <Image
+            loading="lazy"
+            src={RightImageSrc}
+            alt="Hero Section Left Image"
+            className="w-full h-full object-contain "
+          />
+        </div>
       </motion.div>
     </div>
   );

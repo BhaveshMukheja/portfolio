@@ -5,6 +5,7 @@ import { motion, useTransform, MotionValue } from "framer-motion";
 import useWindowWidth from "@/app/Hooks/useWindowWidth"; // Custom hook to get current window width
 import Image from "next/image"; // Optimized image component from Next.js
 import LeftImageSrc from "../../../../../public/assets/ss12.png"; // Local image source
+import yellowBg from "../../../../../public/assets/yellowBg4.png";
 
 // Props type definition
 type Props = {
@@ -19,31 +20,35 @@ export default function LeftImage({ mouseX }: Props) {
 
   return (
     // Wrapper div for left image, covers left half of the screen
-    <div className="w-1/2 h-full overflow-hidden absolute left-0 top-0">
-      {/* Motion div to animate horizontal movement based on cursor */}
+    <div className="w-full md:w-1/2 md:max-h-screen md:min-h-[700px] overflow-hidden">
+      {/* Motion div to animate horizontal move3ent based on cursor */}
       <motion.div
-        style={{ translateX }} // Bind the horizontal movement to `translateX`
+        style={{ translateX }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }} // Bind the horizontal movement to `translateX`
         transition={{
           duration: 0.8, // Smooth animation
           ease: [0.49, 0.04, 0.5, 0.99], // Custom easing curve for natural motion
         }}
-        className="w-full h-[650px] absolute right-0 bottom-0"
+        className="w-full h-full relative"
       >
-        {/* Decorative arc-like yellow gradient div at the bottom */}
-        <div className="absolute bottom-0 ">
-          <div className="w-[700px] h-86 rounded-t-full border-t-4 border-x-4 border-b-0 border-transparent bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 "></div>
+        <div className="absolute inset-0 z-0">
+          <Image
+            loading="lazy"
+            src={yellowBg}
+            alt="Yellow bg"
+            className="object-contain w-full bottom-0 absolute -left-7"
+          />
         </div>
 
-        {/* The actual image displayed with full coverage and brightness boost */}
-        <Image
-          src={LeftImageSrc}       // Image source
-          alt="Hero Section Left Image"               // Accessibility alt text
-          fill                     // Fills the container
-          className="object-cover brightness-125" // Styling the image
-          priority                 // Preloads the image for faster rendering
-          // width={100}
-          // height={100}
-        />
+        {/* Foreground: explicit z-10 */}
+        <div className="absolute bottom-0 inset-0 z-10">
+          <Image
+            src={LeftImageSrc}
+            alt="Hero Section Left Image"
+            className="w-full h-full object-contain brightness-125"
+          />
+        </div>
       </motion.div>
     </div>
   );

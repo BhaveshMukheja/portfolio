@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, data, type }) => {
   };
 
   return (
-    <div className="w-[45%]">
+    <div className="lg:w-[45%] sm:text-md text-tiny">
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -72,7 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, data, type }) => {
           {/* Card Content */}
           <div className="flex flex-col">
             {/* Project Title */}
-            <div className="text-xl font-semibold text-white">
+            <div className="sm:text-xl text-lg sm:w-full w-[70%] font-semibold text-white">
               {data.title}
             </div>
 

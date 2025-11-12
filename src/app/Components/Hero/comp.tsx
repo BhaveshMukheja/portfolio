@@ -11,27 +11,35 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Center mouseX on first render
-  const mouseX = useMotionValue(0);
+  const mouseX = useMotionValue(window.innerWidth/2);
+
+  const widthRef = useRef(window.innerWidth);
+useEffect(() => {
+  const handleResize = () => (widthRef.current = window.innerWidth);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
 
-  useEffect(() => {
-    const centerX = window.innerWidth / 2;
-    mouseX.set(centerX);
-  }, [mouseX]);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const bounds = containerRef.current?.getBoundingClientRect();
-    if (!bounds) return;
+  // useEffect(() => {
+  //   const centerX = window.innerWidth / 2;
+  //   mouseX.set(centerX);
+  // }, [mouseX]);
+
+
+let frame: number | null = null;
+const handleMouseMove = (e: React.MouseEvent) => {
+  if (frame) cancelAnimationFrame(frame);
+  frame = requestAnimationFrame(() => {
     const x = e.clientX;
-    const delta = window.innerWidth - x;
-
+    const delta = widthRef.current - x;
     animate(mouseX, delta, {
       duration: 0.8,
       ease: [0.49, 0.04, 0.5, 0.99],
     });
-
-    mouseX.set(x);
-  };
+  });
+};
 
   const handleMouseLeave = () => {
     animate(mouseX, window.innerWidth / 2, {
@@ -41,14 +49,14 @@ export default function Hero() {
   };
 
   return (
-    <div className="w-screen h-screen ">
+    <div className="w-screen md:h-screen lg:h-[75%] ">
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 3.0, ease: "easeOut" }}
       id="home"
       ref={containerRef}
-      className="h-full w-full absolute top-4 flex bg-white"
+      className="h-full w-full flex bg-white"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

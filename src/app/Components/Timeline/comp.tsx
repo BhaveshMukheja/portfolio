@@ -36,9 +36,9 @@ const Comp = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Index of the currently hovered card
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen md:p-6">
       {/* Title */}
-      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-8 mb-16 uppercase">
+      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-8 mb-16 uppercase text-center text-heading-tiny sm:text-lg md:text-4xl lg:text-5xl">
         Experience and Education
       </div>
 
@@ -82,7 +82,7 @@ const Comp = () => {
                 ></div>
 
                 {/* Actual content of the card */}
-                <div className={`relative z-10 ${isHovered ? "text-white" : ""}`}>
+                <div className={`relative text-tiny  z-10 ${isHovered ? "text-white" : ""}`}>
                   {/* Optional logo (black or white depending on hover state) */}
                   {item.logo?.trim() ? (
                     <Image
@@ -97,7 +97,7 @@ const Comp = () => {
                   ) : null}
 
                   {/* Main title */}
-                  <h3 className="vertical-timeline-element-title font-semibold">
+                  <h3 className="vertical-timeline-element-title font-semibold w-[50%] sm:w-[100%]">
                     {item.title}
                   </h3>
 

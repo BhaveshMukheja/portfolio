@@ -26,12 +26,12 @@ const comp = () => {
     // Main container with minimum height of viewport
     <div className="min-h-screen">
       {/* Competition section header */}
-      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-24 mb-16 text-white uppercase">
+      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-24 mb-16 text-white uppercase text-heading-tiny sm:text-lg md:text-4xl lg:text-5xl">
         Competitions
       </div>
       
       {/* Container for competition cards with horizontal spacing */}
-      <div className="flex space-x-6 justify-center items-center">
+      <div className="flex gap-10 justify-center items-center flex-wrap">
         {/* Map through competition data to render cards */}
         {CompetitonData.map((item, index) => {
           // Validate and sanitize card color, fallback to "default" if invalid

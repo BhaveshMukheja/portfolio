@@ -264,7 +264,7 @@ const Terminal: React.FC = () => {
 
   // Terminal UI rendering
   return (
-    <div className="bg-black p-4 w-full max-w-2xl font-mono rounded-xl shadow-lg mx-auto">
+    <div className="bg-black p-4 w-full max-w-2xl font-mono rounded-xl shadow-lg mx-auto text-tiny sm:text-md">
       {/* Top bar (Mac style) */}
       <div className="flex space-x-2 mb-2">
         <div className="w-3 h-3 rounded-full bg-red-500" />

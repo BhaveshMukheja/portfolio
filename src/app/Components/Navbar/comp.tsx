@@ -105,7 +105,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`w-full sticky top-0 left-0 z-50 shadow-md backdrop-blur-md transition-all duration-500 ${navStyle.background}`}
+      className={`w-full  sticky top-0 left-0 z-50 shadow-md backdrop-blur-md transition-all duration-500 ${navStyle.background}`}
     >
       <div className="max-w-7xl mx-auto p-2 flex justify-between items-center">
         <Link href="/">

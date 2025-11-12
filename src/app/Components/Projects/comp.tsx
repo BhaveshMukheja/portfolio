@@ -6,7 +6,7 @@ const ProjectsSection: React.FC = () => {
   return (
     <>
       {/* Main projects section title */}
-      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-24 mb-16 uppercase text-white">
+      <div className="flex items-center justify-center text-5xl font-rob p-8 mt-24 mb-16 uppercase text-white sm:text-lg md:text-4xl lg:text-5xl text-heading-tiny">
         Projects
       </div>
 
@@ -22,8 +22,8 @@ const ProjectsSection: React.FC = () => {
           <div className="w-full">
             {/* Section header with gradient accent and title */}
             <span className="flex items-center space-x-4">
-              <div className="w-10 mb-2 h-4 bg-gradient-to-r from-violet-900 to-indigo-600"></div>
-              <div className="text-4xl mb-8 text-white uppercase">Web Dev</div>
+              <div className="sm:w-10 w-6 mb-2 sm:h-4 h-2 bg-gradient-to-r from-violet-900 to-indigo-600 "></div>
+              <div className="text-4xl sm:mb-8 mb-4 text-white uppercase sm:text-lg md:text-4xl lg:text-5xl text-heading-tiny">Web Dev</div>
             </span>
 
             {/* Project cards container with vertical spacing */}
@@ -50,8 +50,8 @@ const ProjectsSection: React.FC = () => {
           <div className="w-full">
             {/* Section header with gradient accent and title */}
             <span className="flex items-center space-x-4">
-              <div className="w-10 mb-2 h-4 bg-gradient-to-r from-violet-900 to-indigo-600"></div>
-              <div className="text-4xl mb-8 text-white uppercase">ML and Research</div>
+              <div className="sm:w-10 w-6 mb-2 sm:h-4 h-2 bg-gradient-to-r from-violet-900 to-indigo-600"></div>
+              <div className="text-4xl sm:mb-8 mb-4 text-white uppercase sm:text-lg md:text-4xl lg:text-5xl text-heading-tiny">ML and Research</div>
             </span>
 
             {/* Project cards container with larger vertical spacing */}

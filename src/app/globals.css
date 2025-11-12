@@ -18,6 +18,8 @@ html {
   --animate-slidein: slide-in-top 0.3s both;
   --animate-border: border-rotate 4s linear infinite;
   --animate-wave: wave 1.5s ease-in-out infinite;
+  --text-heading-tiny: 1.625rem;
+  --text-tiny: 0.90rem;
 
   @keyframes slide-in-top {
     0% {
