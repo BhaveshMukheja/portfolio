@@ -49,7 +49,7 @@ const handleMouseMove = (e: React.MouseEvent) => {
   };
 
   return (
-    <div className="w-screen md:h-screen lg:h-[75%] ">
+    <div className="w-screen h-[30vh] sm:h-[30vh] md:h-[40vh] lg:h-[60vh] xl:h-[70vh] 2xl:h-[80vh]">
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

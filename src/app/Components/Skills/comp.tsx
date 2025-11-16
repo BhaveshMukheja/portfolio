@@ -5,17 +5,20 @@ import SkillBox from "./SkillBox/comp";
 const comp = () => {
   return (
     <>
-      <div className="md:min-h-screen md:w-screen relative bg-[#EEEFEE] sm:flex sm:justify-center sm:items-center p-6 flex-col">
-        <div className="flex items-center justify-center font-rob p-6 py-20 text-black uppercase text-heading-tiny sm:text-lg md:text-4xl lg:text-5xl text-center">
+      <div className="min-h-screen w-screen relative bg-[#EEEFEE] flex flex-col space-y-6 md:space-y-16 p-4 md:p-6">
+        <div className="flex items-center justify-center font-rob text-black uppercase text-md sm:text-lg md:text-3xl lg:text-5xl md:pt-8 text-center">
           Skills and Technologies
         </div>
+        
 
-        <div className="flex items-center justify-center overflow-hidden">
-          <div className="lg:w-3/5 md:w-full sm:w-full pl-6 sm:flex sm:justify-center sm:items-center sm:text-md text-tiny">
+        <div className="flex md:flex-col lg:flex-row items-center justify-center overflow-hidden">
+
+
+          <div className="w-full flex justify-center items-center ">
             <SkillBox />
           </div>
 
-          <div className="lg:w-2/5 w-[0%] ">
+          <div className=" hidden lg:block lg:w-2/5 ">
             {" "}
             <SkillSphere />
           </div>

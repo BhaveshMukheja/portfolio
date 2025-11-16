@@ -20,7 +20,7 @@ export default function RightImage({ mouseX }: Props) {
 
   return (
     // Container taking right half of the screen, positioned at bottom right
-    <div className="w-full md:w-1/2  md:max-h-screen md:min-h-[700px] overflow-hidden ">
+    <div className="w-1/2 h-full overflow-hidden">
       {/* Motion div to animate the image horizontally */}
       <motion.div
         style={{ translateX }} // Apply horizontal translation based on cursor position4
@@ -33,22 +33,22 @@ export default function RightImage({ mouseX }: Props) {
         className="w-full h-full relative"
       >
         {/* Full-size image with object cover */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-0 z-0">
           <Image
             src={pinkBg}
             alt="Pink bg"
-            className="object-contain  w-full bottom-0 absolute -left-7"
+            className="object-contain  w-full -left-7"
             priority
           />
         </div>
 
         {/* Foreground: explicit z-10 */}
-        <div className="absolute inset-0 z-10">
+        <div className="absolute bottom-0 z-10">
           <Image
             loading="lazy"
             src={RightImageSrc}
             alt="Hero Section Left Image"
-            className="w-full h-full object-contain "
+            className=" object-contain"
           />
         </div>
       </motion.div>

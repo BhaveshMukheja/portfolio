@@ -20,7 +20,7 @@ export default function LeftImage({ mouseX }: Props) {
 
   return (
     // Wrapper div for left image, covers left half of the screen
-    <div className="w-full md:w-1/2 md:max-h-screen md:min-h-[700px] overflow-hidden">
+    <div className="w-1/2 h-full overflow-hidden">
       {/* Motion div to animate horizontal move3ent based on cursor */}
       <motion.div
         style={{ translateX }}
@@ -32,21 +32,21 @@ export default function LeftImage({ mouseX }: Props) {
         }}
         className="w-full h-full relative"
       >
-        <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-0 z-0">
           <Image
             loading="lazy"
             src={yellowBg}
             alt="Yellow bg"
-            className="object-contain w-full bottom-0 absolute -left-7"
+            className="object-contain w-full -left-7"
           />
         </div>
 
         {/* Foreground: explicit z-10 */}
-        <div className="absolute bottom-0 inset-0 z-10">
+        <div className="absolute bottom-0 z-10">
           <Image
             src={LeftImageSrc}
             alt="Hero Section Left Image"
-            className="w-full h-full object-contain brightness-125"
+            className="object-contain brightness-125"
           />
         </div>
       </motion.div>

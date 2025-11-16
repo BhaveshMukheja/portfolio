@@ -8,7 +8,7 @@ const Comp = () => {
     // - Large screens: 2 columns (lg:grid-cols-2)
     // - Small screens: 1 column (sm:grid-cols-1) with centered items (sm:items-center)
     // - Consistent 10-unit gap between items (gap-10)
-    <div className='grid lg:grid-cols-2 gap-10 sm:grid-cols-1 sm:items-center'>
+    <div className='grid gap-10  grid-cols-1 lg:grid-cols-2 place-items-center w-full h-full'>
       {/* Map through skillData array to render each skill category */}
       {skillData.map((item, index) => (
         <Box 

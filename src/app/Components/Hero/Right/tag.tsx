@@ -30,13 +30,13 @@ const Tag = ({ mouseX }: Props) => {
           ease: "easeOut", // Easing function
           duration: 0.5, // Animation duration in seconds
         }}
-        className="absolute top-[35%] right-[5%] text-center"
+        className="absolute top-[20%] sm:top-[15%] right-[5%] md:top-[20%] lg:top-[25%] text-center"
       >
         {/* Main title text */}
-        <p className="text-5xl font-rob">Full-Stack Developer</p>
+        <p className="text-md sm:text-lg md:text-2xl lg:text-3xl font-rob">Full-Stack Developer</p>
 
         {/* Subtitle text with smaller size and gray color */}
-        <p className="text-lg mt-5 text-gray-500">
+        <p className="text-xs sm:text-sm  md:text-md lg:text-lg  mt-5 text-gray-500">
           Obsessed with clean code and
           <br />
           seamless user experiences
