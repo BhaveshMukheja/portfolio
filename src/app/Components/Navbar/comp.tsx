@@ -84,7 +84,7 @@ export default function Navbar() {
       case "publications":
         return "/publications";
       case "resume":
-        return "assets/Bhavesh_CV_2025.pdf";
+        return "assets/Bhavesh_SDE_CV_March_26.pdf";
       case "about me":
         return "/coming_soon?tab=about";
       case "blog":

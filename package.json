@@ -15,7 +15,7 @@
     "@tensorflow/tfjs": "^4.22.0",
     "framer-motion": "^12.15.0",
     "gasp": "^0.0.2",
-    "gsap": "^3.13.0",
+    "gsap": "^3.13.0",  
     "leva": "^0.10.0",
     "next": "15.3.3",
     "next-sitemap": "^4.2.3",

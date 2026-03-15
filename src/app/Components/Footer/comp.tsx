@@ -27,7 +27,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-gray-300">
             <li>
               <a 
-                href="/assets/Bhavesh_CV_2025.pdf" 
+                href="/assets/Bhavesh_SDE_CV_March_26.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:underline"

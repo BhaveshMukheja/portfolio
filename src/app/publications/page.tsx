@@ -13,7 +13,7 @@ const icons = [
   {
     Icon: FaGoogleScholar,
     bg: "#4D90FE",
-    href: "https://scholar.google.com", // Update if you have your personal profile link
+    href: "https://scholar.google.com/citations?user=OMF3bdAAAAAJ&hl=en", // Update if you have your personal profile link
     title: "Google Scholar",
   },
 ];

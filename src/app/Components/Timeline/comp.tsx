@@ -44,7 +44,7 @@ const Comp = () => {
 
       {/* Timeline starts */}
       <VerticalTimeline lineColor="transparent">
-        {expData.map((item, i) => {
+0        {expData.map((item, i) => {
           const IconComponent = iconMap[item.icon]; // Get icon component from iconMap
           const isHovered = hoveredIndex === i;      // Track if the current element is being hovered
 
@@ -112,6 +112,8 @@ const Comp = () => {
 
                   {/* Description */}
                   <div className="w-[80%] mt-4">{item.descrip}</div>
+
+                  
                 </div>
               </div>
             </VerticalTimelineElement>
